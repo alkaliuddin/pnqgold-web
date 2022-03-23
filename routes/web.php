@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\SchoolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,14 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::controller(ComplaintController::class)->group(function () {
-        Route::get('complaints', 'index')->name('complaints');
         Route::get('complaints/list', 'getComplaints')->name('complaints.list');
-        Route::get('complaints/create', 'create')->name('complaints.create');
     });
+    Route::controller(SchoolController::class)->group(function () {
+        Route::get('schools/list', 'getSchools')->name('schools.list');
+    });
+
+    Route::resource('complaints', ComplaintController::class);
+    Route::resource('schools', SchoolController::class);
 });
 
 Auth::routes();

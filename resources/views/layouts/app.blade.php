@@ -12,7 +12,6 @@
         crossorigin="anonymous" />
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 
     @yield('third_party_stylesheets')
 
@@ -85,7 +84,7 @@
         </footer>
     </div>
 
-    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     @yield('third_party_scripts')
 

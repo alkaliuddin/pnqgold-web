@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Complaint;
+use App\Models\School;
 
 return new class extends Migration {
     /**
@@ -14,22 +16,24 @@ return new class extends Migration {
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
 
+            $table->foreignIdFor(School::class, 'school_id')
+                ->constrained(School::getModel()->getTable())
+                ->onDelete('cascade');
+
             $table->string('complaint_isd_code')->unique();
 
-            $table->string('school_code');
-            $table->string('school_name');
+            $table->string('asset_model')->nullable();
+            $table->string('tagging_no')->nullable();
+            $table->string('serial_no')->nullable();
 
-            $table->string('asset_model');
-            $table->string('tagging_no');
-            $table->string('serial_no');
-
-            $table->string('complainant_name');
-            $table->string('complainant_email');
-            $table->string('complainant_phone');
+            $table->string('complainant_name')->nullable();
+            $table->string('complainant_email')->nullable();
+            $table->string('complainant_phone')->nullable();
             $table->text('complaint_details')->nullable();
             $table->string('status')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

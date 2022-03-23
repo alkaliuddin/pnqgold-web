@@ -29,8 +29,9 @@
                             Complaint Details
                         </h3>
                     </div>
-                    <form action="{{ route('complaints.store') }}" method="POST">
+                    <form action="{{ route('complaints.update', $complaint->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="card-body">
                             <div class="p-0">
                                 <div class="row">
@@ -38,7 +39,7 @@
                                         <div class="form-group">
                                             <label for="complaint_isd_code">ISD Code</label>
                                             <input type="text" class="form-control" id="complaint_isd_code"
-                                                name="complaint_isd_code" placeholder="Enter ISD Code">
+                                                name="complaint_isd_code" value="{{ $complaint->complaint_isd_code }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="school_id">School Name & Code</label>
@@ -57,17 +58,17 @@
                                         <div class="form-group">
                                             <label for="asset_model">Asset Model</label>
                                             <input type="text" class="form-control" id="asset_model" name="asset_model"
-                                                placeholder="Enter Asset Model">
+                                                value="{{ $complaint->asset_model }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="tagging_no">Tagging No.</label>
                                             <input type="text" class="form-control" id="tagging_no" name="tagging_no"
-                                                placeholder="Enter Tagging #">
+                                                value="{{ $complaint->tagging_no }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="serial_no">Serial No.</label>
                                             <input type="text" class="form-control" id="serial_no" name="serial_no"
-                                                placeholder="Enter Serial #">
+                                                value="{{ $complaint->serial_no }}">
                                         </div>
                                     </div>
                                 </div>
@@ -77,19 +78,19 @@
                                         <div class="form-group">
                                             <label for="complainant_name">Complainant Name</label>
                                             <input type="text" class="form-control" id="complainant_name"
-                                                name="complainant_name" placeholder="Enter Complainant Name">
+                                                name="complainant_name" value="{{ $complaint->complainant_name }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="complainant_email">Complainant Email</label>
                                             <input type="email" class="form-control" id="complainant_email"
-                                                name="complainant_email" placeholder="Enter Complainant Email Address">
+                                                name="complainant_email" value="{{ $complaint->complainant_email }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="complainant_phone">Complainant Phone No</label>
                                             <input type="text" class="form-control" id="complainant_phone"
-                                                name="complainant_phone" placeholder="Enter Complainant Phone #">
+                                                name="complainant_phone" value="{{ $complaint->complainant_phone }}">
                                         </div>
                                     </div>
                                 </div>
@@ -100,8 +101,8 @@
                                             Details
                                         </label>
                                         <br>
-                                        <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control"
-                                            placeholder="Leave a comment..."></textarea>
+                                        <textarea id="complaint_details" name="complaint_details" rows="4"
+                                            class="form-control">{{ $complaint->complaint_details }}</textarea>
                                     </div>
                                 </div>
                                 <div class="flex">
@@ -116,12 +117,11 @@
                                             <option value="In Progress">In Progress</option>
                                             <option value="Completed">Completed</option>
                                             <option value="Unknown">Unknown</option>
-
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ url()->previous() }}" class="btn btn-danger">
+                            <a href="{{ route('complaints.index') }}" class="btn btn-danger">
                                 <i class="fas fa-ban mr-2"></i>
                                 Cancel
                             </a>

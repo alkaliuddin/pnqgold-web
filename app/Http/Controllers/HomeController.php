@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Complaint;
+use App\Models\School;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -21,8 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $newCount = Complaint::where('status', 'New')->get();
+        $progressCount = Complaint::where('status', 'In Progress')->get();
+        $completedCount = Complaint::where('status', 'Completed')->get();
+        $unknownCount = Complaint::where('status', 'Unknown')->get();
+
+        return view('home', compact('newCount', 'progressCount', 'completedCount', 'unknownCount'));
     }
 }

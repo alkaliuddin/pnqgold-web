@@ -8,7 +8,7 @@
     </div>
     <div class="container-fluid mx-auto">
         <div class="row">
-            <div class="col-lg-3 col-2">
+            <div class="col-lg-3 col-6">
                 <div class="info-box">
                     <span class="info-box-icon bg-info">
                         <i class="fas fa-plus"></i>
@@ -18,7 +18,7 @@
                             New
                         </span>
                         <span class="info-box-number text-lg">
-                            25
+                            {{ $newCount->count() }}
                         </span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             In Progress
                         </span>
                         <span class="info-box-number text-lg">
-                            0
+                            {{ $progressCount->count() }}
                         </span>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             Completed
                         </span>
                         <span class="info-box-number text-lg">
-                            0
+                            {{ $completedCount->count() }}
                         </span>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                             Unknown
                         </span>
                         <span class="info-box-number text-lg">
-                            0
+                            {{ $unknownCount->count() }}
                         </span>
                     </div>
                 </div>
@@ -95,9 +95,6 @@
                                         <th>Tagging No.</th>
                                         <th>Serial No.</th>
                                         <th>Complainant Name</th>
-                                        {{-- <th>Complainant Email</th>
-                                    <th>Complainant Phone No.</th>
-                                    <th>Complaint Details</th> --}}
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -111,5 +108,5 @@
             </div>
         </div>
     </div>
-    @include('scripts.complaintsDataTableScript')
+    @include('scripts.complaintsDataTable')
 @endsection

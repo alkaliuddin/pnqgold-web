@@ -11,7 +11,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>25</h3>
+                        <h3>{{ $newCount->count() }}</h3>
                         <p>New</p>
                     </div>
                     <div class="icon">
@@ -26,7 +26,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3>{{ $progressCount->count() }}</h3>
                         <p>In-progress</p>
                     </div>
                     <div class="icon">
@@ -41,7 +41,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3>{{ $completedCount->count() }}</h3>
                         <p>Completed</p>
                     </div>
                     <div class="icon">
@@ -56,7 +56,7 @@
             <div class="col-lg-3 col-4">
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3>{{ $unknownCount->count() }}</h3>
                         <p>Unknown</p>
                     </div>
                     <div class="icon">
@@ -79,10 +79,8 @@
                     </div>
                     <div class="card-body">
                         <div class="p-0 tab-content">
-                            <div class="chart">
-                                <canvas id="areaChart"
-                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 572px;"
-                                    width="715" height="312" class="chartjs-render-monitor"></canvas>
+                            <div class="barChart">
+                                <canvas id="barChart" class="chartjs-render-monitor"></canvas>
                             </div>
                         </div>
                     </div>
@@ -97,16 +95,14 @@
                     </div>
                     <div class="card-body">
                         <div class="p-0 tab-content">
-                            <div class="chart">
-                                <canvas id="areaChart"
-                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 572px;"
-                                    width="715" height="312" class="chartjs-render-monitor"></canvas>
+                            <div class="donutChart">
+                                <canvas id="donutChart" class="chartjs-render-monitor"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+    @include('scripts.statisticCharts')
 @endsection
