@@ -11,7 +11,9 @@
             labels: ['New', 'In Progress', 'Completed', 'Unknown'],
             datasets: [{
                 label: '# of Complaint Tickets',
-                data: [25, 5, 12, 0],
+                data: [{!! $newCount->count() !!}, {!! $progressCount->count() !!}, {!! $completedCount->count() !!},
+                    {!! $unknownCount->count() !!}
+                ],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
@@ -47,7 +49,9 @@
             ],
             datasets: [{
                 label: 'Complaint Tickets',
-                data: [25, 5, 12, 0],
+                data: [{!! $newCount->count() !!}, {!! $progressCount->count() !!}, {!! $completedCount->count() !!},
+                    {!! $unknownCount->count() !!}
+                ],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
