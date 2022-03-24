@@ -47,9 +47,15 @@
                                                 <option value="school_id" selected disabled>-- Select School --
                                                 </option>
                                                 @foreach ($schools as $key => $school)
-                                                    <option value="{{ $school->id }}">
-                                                        {{ $school->school_name }} ({{ $school->school_code }})
-                                                    </option>
+                                                    @if ($complaint->school_id == $school->id)
+                                                        <option value="{{ $school->id }}" selected>
+                                                            {{ $school->school_name }} ({{ $school->school_code }})
+                                                        </option>
+                                                    @else
+                                                        <option value="{{ $school->id }}">
+                                                            {{ $school->school_name }} ({{ $school->school_code }})
+                                                        </option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -112,7 +118,7 @@
                                         </label>
                                         <br>
                                         <select class="form-control" name="status" id="status">
-                                            <option value="status" selected disabled>-- Select Status --</option>
+                                            <option value="status" selected disabled>-- Select Updated Status --</option>
                                             <option value="New">New</option>
                                             <option value="In Progress">In Progress</option>
                                             <option value="Completed">Completed</option>
