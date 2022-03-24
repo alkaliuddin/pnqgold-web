@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
-            <h1 class="text-black-50">Complaints</h1>
+            <h1 class="text-black-50">Complaint Tickets</h1>
         </div>
     </div>
     <div class="container-fluid mx-auto">
@@ -75,11 +75,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            List of Complaints
+                            List of Complaint Tickets
                         </h3>
                         <a href="{{ url('/complaints/create') }}" class="btn btn-primary float-right pull-right">
                             <i class="fas fa-plus"></i>
-                            Add Complaint
+                            Create a Complaint Ticket
                         </a>
                     </div>
                     <div class="card-body">
