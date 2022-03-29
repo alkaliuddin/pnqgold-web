@@ -21,7 +21,7 @@
                     </div>
                     <div class="card-body">
                         <div class="p-0">
-                            <table class="table table-auto table-bordered yajra-datatable">
+                            <table class="table table-auto table-bordered schools-datatable dt-responsive">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -39,5 +39,4 @@
             </div>
         </div>
     </div>
-    @include('scripts.schoolsDataTable')
 @endsection

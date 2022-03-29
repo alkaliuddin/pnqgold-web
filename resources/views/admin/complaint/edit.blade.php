@@ -63,8 +63,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="asset_model">Asset Model</label>
-                                            <input type="text" class="form-control" id="asset_model" name="asset_model"
-                                                value="{{ $complaint->asset_model }}">
+                                            <select class="form-control" id="asset_model" name="asset_model">
+                                                <option value="status" selected disabled>-- Select Asset Model --</option>
+                                                <option value="Komputer Riba">Komputer Riba</option>
+                                                <option value="Printer">Printer</option>
+                                                <option value="Projektor">Projektor</option>
+                                                <option value="Charging Cart">Charging Cart</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="tagging_no">Tagging No.</label>
@@ -118,11 +123,10 @@
                                         </label>
                                         <br>
                                         <select class="form-control" name="status" id="status">
-                                            <option value="status" selected disabled>-- Select Updated Status --</option>
-                                            <option value="New">New</option>
-                                            <option value="In Progress">In Progress</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="Unknown">Unknown</option>
+                                            <option value="status" selected disabled>-- Pilih Status --</option>
+                                            <option value="Baru">Baru</option>
+                                            <option value="Dalam Proses">Dalam Proses</option>
+                                            <option value="Selesai">Selesai</option>
                                         </select>
                                     </div>
                                 </div>

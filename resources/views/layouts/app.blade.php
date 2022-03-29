@@ -11,7 +11,15 @@
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+
+    @routes
+
+    <script src="{{ asset(mix('js/app.js')) }}"></script>
 
     @yield('third_party_stylesheets')
 
@@ -84,10 +92,7 @@
         </footer>
     </div>
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
-
-    @yield('third_party_scripts')
-
+    @stack('third_party_scripts')
     @stack('page_scripts')
 </body>
 

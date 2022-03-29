@@ -54,13 +54,13 @@
                 </div>
             </div>
             <div class="col-lg-3 col-4">
-                <div class="small-box bg-danger">
+                <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3>{{ $unknownCount->count() }}</h3>
-                        <p>Unknown</p>
+                        <h3>{{ $total = $newCount->count() + $progressCount->count() + $completedCount->count() }}</h3>
+                        <p>Total</p>
                     </div>
                     <div class="icon">
-                        <i class="fas fa-question"></i>
+                        <i class="fas fa-folder-plus"></i>
                     </div>
                     <a href="#" class="small-box-footer">
                         More info
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-6">
+            <div class="col-lg-12 col-6">
                 <div class="card">
                     <div class="card-header ui-sortable-handle">
                         <h3 class="card-title">
@@ -81,22 +81,6 @@
                         <div class="p-0 tab-content">
                             <div class="barChart">
                                 <canvas id="barChart" class="chartjs-render-monitor"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-6">
-                <div class="card">
-                    <div class="card-header ui-sortable-handle">
-                        <h3 class="card-title">
-                            Donut Chart
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="p-0 tab-content">
-                            <div class="donutChart">
-                                <canvas id="donutChart" class="chartjs-render-monitor"></canvas>
                             </div>
                         </div>
                     </div>

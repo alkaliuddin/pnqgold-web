@@ -24,10 +24,9 @@ class ComplaintController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $newCount = Complaint::where('status', 'New')->get();
-        $progressCount = Complaint::where('status', 'In Progress')->get();
-        $completedCount = Complaint::where('status', 'Completed')->get();
-        $unknownCount = Complaint::where('status', 'Unknown')->get();
+        $newCount = Complaint::where('status', 'Baru')->get();
+        $progressCount = Complaint::where('status', 'Dalam Proses')->get();
+        $completedCount = Complaint::where('status', 'Selesai')->get();
 
         $data = Complaint::with('School')
             ->latest('complaints.updated_at')
@@ -35,7 +34,7 @@ class ComplaintController extends Controller {
 
         // dd($data->toArray());
 
-        return view('admin.complaint.index', compact('newCount', 'progressCount', 'completedCount', 'unknownCount'));
+        return view('admin.complaint.index', compact('newCount', 'progressCount', 'completedCount'));
     }
 
     public function create() {
@@ -90,6 +89,7 @@ class ComplaintController extends Controller {
 
         $data = $request->all();
         $complaint->update($data);
+        $complaint->touch();
 
         return redirect()->route('complaints.index')
             ->with('success', 'Complaint updated successfully');
@@ -112,6 +112,12 @@ class ComplaintController extends Controller {
 
             return Datatables::of($data)
                 ->addIndexColumn()
+                ->editColumn('created_at', function ($request) {
+                    return $request->created_at->toDateTimeString();
+                })
+                ->editColumn('updated_at', function ($request) {
+                    return $request->updated_at->toDateTimeString();
+                })
                 ->addColumn('action', function ($row) {
                     return $this->getActionColumn($row);
                 })
@@ -124,15 +130,26 @@ class ComplaintController extends Controller {
         $detailsURL = route('complaints.edit', $data->id);
         $deleteURL = route('complaints.destroy', $data->id);
 
-        $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
         $x = '
-                <a href=' . $detailsURL . ' class="edit btn btn-success btn-sm">Details</a>
-                <form action=' . $deleteURL . ' method="POST">
-                    ' . csrf_field() . '
-                    ' . method_field("DELETE") . '
-                    <button type="submit" class="delete btn btn-danger btn-sm"
-                        onclick="return confirm(\'Are You Sure Want to Delete?\')">Delete</a>
-                </form>';
+        <span>
+        <form action=' . $detailsURL . ' method="GET">
+            ' . csrf_field() . '
+            ' . method_field("DELETE") . '
+            <button type="submit" class="edit btn btn-success btn-sm">
+            <i class="fas fa-edit"></i>
+            Sunting
+            </a>
+        </form>
+        <form action=' . $deleteURL . ' method="POST">
+            ' . csrf_field() . '
+            ' . method_field("DELETE") . '
+            <button type="submit" class="delete btn btn-danger btn-sm"
+                onclick="return confirm(\'Anda pasti?\')">
+                <i class="fas fa-trash"></i>
+                Buang
+                </a>
+        </form>
+        </span>';
 
         return $x;
     }

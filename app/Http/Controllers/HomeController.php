@@ -22,11 +22,10 @@ class HomeController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $newCount = Complaint::where('status', 'New')->get();
-        $progressCount = Complaint::where('status', 'In Progress')->get();
-        $completedCount = Complaint::where('status', 'Completed')->get();
-        $unknownCount = Complaint::where('status', 'Unknown')->get();
+        $newCount = Complaint::where('status', 'Baru')->get();
+        $progressCount = Complaint::where('status', 'Dalam Proses')->get();
+        $completedCount = Complaint::where('status', 'Selesai')->get();
 
-        return view('home', compact('newCount', 'progressCount', 'completedCount', 'unknownCount'));
+        return view('home', compact('newCount', 'progressCount', 'completedCount'));
     }
 }

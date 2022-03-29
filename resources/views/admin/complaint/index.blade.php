@@ -15,7 +15,7 @@
                     </span>
                     <div class="info-box-content">
                         <span class="info-box-text">
-                            New
+                            Baru
                         </span>
                         <span class="info-box-number text-lg">
                             {{ $newCount->count() }}
@@ -30,7 +30,7 @@
                     </span>
                     <div class="info-box-content">
                         <span class="info-box-text">
-                            In Progress
+                            Dalam Proses
                         </span>
                         <span class="info-box-number text-lg">
                             {{ $progressCount->count() }}
@@ -45,7 +45,7 @@
                     </span>
                     <div class="info-box-content">
                         <span class="info-box-text">
-                            Completed
+                            Selesai
                         </span>
                         <span class="info-box-number text-lg">
                             {{ $completedCount->count() }}
@@ -55,15 +55,15 @@
             </div>
             <div class="col-lg-3 col-6">
                 <div class="info-box">
-                    <span class="info-box-icon bg-danger">
-                        <i class="fas fa-question"></i>
+                    <span class="info-box-icon bg-primary">
+                        <i class="fas fa-folder-plus"></i>
                     </span>
                     <div class="info-box-content">
                         <span class="info-box-text">
-                            Unknown
+                            Jumlah
                         </span>
                         <span class="info-box-number text-lg">
-                            {{ $unknownCount->count() }}
+                            {{ $total = $newCount->count() + $progressCount->count() + $completedCount->count() }}
                         </span>
                     </div>
                 </div>
@@ -75,28 +75,32 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            List of Complaint Tickets
+                            Senarai Tiket Aduan
                         </h3>
                         <a href="{{ url('/complaints/create') }}" class="btn btn-primary float-right pull-right">
                             <i class="fas fa-plus"></i>
-                            Create a Complaint Ticket
+                            Masuk Aduan Baru
                         </a>
                     </div>
                     <div class="card-body">
                         <div class="p-0">
-                            <table class="table table-auto table-bordered yajra-datatable">
+                            <table class="table table-auto table-bordered complaints-datatable dt-responsive nowrap">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>ISD Code</th>
-                                        <th>School Code</th>
-                                        <th>School</th>
-                                        <th>Asset Model</th>
-                                        <th>Tagging No.</th>
-                                        <th>Serial No.</th>
-                                        <th>Complainant Name</th>
+                                        <th data-priority="1">Tarikh Masuk</th>
+                                        <th data-priority="2">Tarikh Kemaskini</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Kod Aduan ISD</th>
+                                        <th>Kod Sekolah</th>
+                                        <th>Nama Sekolah</th>
+                                        <th>Model Aset</th>
+                                        <th>No. Tagging</th>
+                                        <th>No. Siri</th>
+                                        <th>Nama Pengadu</th>
+                                        <th>Emel Pengadu</th>
+                                        <th>No. Tel. Pengadu</th>
+                                        <th>Keterangan Aduan</th>
+                                        <th>Tindakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -108,5 +112,4 @@
             </div>
         </div>
     </div>
-    @include('scripts.complaintsDataTable')
 @endsection
