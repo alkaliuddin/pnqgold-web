@@ -1,9 +1,12 @@
 require('./bootstrap');
 require('admin-lte');
 require('jquery');
-require('datatables.net-bs4');
-require('datatables.net-buttons-bs4');
-require('datatables.net-responsive-bs4');
+require("datatables.net-bs4");
+require("datatables.net-buttons-bs4");
+require("datatables.net-fixedheader-bs4");
+require("datatables.net-responsive-bs4");
+require("datatables.net-rowgroup-bs4");
+require("datatables.net-rowreorder-bs4");
 
 // JS
 $(document).ready(function() {
@@ -18,6 +21,9 @@ jQuery(document).ready(function($) {
             serverSide: true,
             responsive: true,
             order: [[0, "desc"]],
+            rowReorder: {
+                selector: "td:nth-child(2)",
+            },
             ajax: route("complaints.list"),
             columns: [
                 {

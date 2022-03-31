@@ -84,23 +84,24 @@
                     </div>
                     <div class="card-body">
                         <div class="p-0">
-                            <table class="table table-auto table-bordered complaints-datatable dt-responsive nowrap">
+                            <table class="table table-auto table-bordered complaints-datatable dt-responsive nowrap"
+                                style="width:100%">
                                 <thead>
                                     <tr>
                                         <th data-priority="1">Tarikh Masuk</th>
-                                        <th data-priority="2">Tarikh Kemaskini</th>
+                                        <th>Tarikh Kemaskini</th>
                                         <th>Status</th>
-                                        <th>Kod Aduan ISD</th>
-                                        <th>Kod Sekolah</th>
+                                        <th data-priority="1">Kod Aduan ISD</th>
+                                        <th data-priority="1">Kod Sekolah</th>
                                         <th>Nama Sekolah</th>
-                                        <th>Model Aset</th>
+                                        <th data-priority="1">Model Aset</th>
                                         <th>No. Tagging</th>
                                         <th>No. Siri</th>
                                         <th>Nama Pengadu</th>
                                         <th>Emel Pengadu</th>
                                         <th>No. Tel. Pengadu</th>
                                         <th>Keterangan Aduan</th>
-                                        <th>Tindakan</th>
+                                        <th data-priority="2">Tindakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>

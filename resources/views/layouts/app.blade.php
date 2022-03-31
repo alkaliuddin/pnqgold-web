@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-
     @routes
-
     <script src="{{ asset(mix('js/app.js')) }}"></script>
 
     @yield('third_party_stylesheets')

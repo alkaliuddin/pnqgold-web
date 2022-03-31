@@ -21,7 +21,8 @@
                     </div>
                     <div class="card-body">
                         <div class="p-0">
-                            <table class="table table-auto table-bordered schools-datatable dt-responsive">
+                            <table class="table table-auto table-bordered schools-datatable dt-responsive nowrap"
+                                style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>No</th>

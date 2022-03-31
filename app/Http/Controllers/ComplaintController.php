@@ -131,25 +131,18 @@ class ComplaintController extends Controller {
         $deleteURL = route('complaints.destroy', $data->id);
 
         $x = '
-        <span>
-        <form action=' . $detailsURL . ' method="GET">
-            ' . csrf_field() . '
-            ' . method_field("DELETE") . '
-            <button type="submit" class="edit btn btn-success btn-sm">
-            <i class="fas fa-edit"></i>
-            Sunting
-            </a>
-        </form>
-        <form action=' . $deleteURL . ' method="POST">
-            ' . csrf_field() . '
-            ' . method_field("DELETE") . '
-            <button type="submit" class="delete btn btn-danger btn-sm"
-                onclick="return confirm(\'Anda pasti?\')">
-                <i class="fas fa-trash"></i>
-                Buang
+            <form action=' . $deleteURL . ' method="POST">
+                <a href=' . $detailsURL . ' class="edit btn btn-success btn-sm">
+                    <i class="fas fa-edit"></i>
+                    Sunting
                 </a>
-        </form>
-        </span>';
+                ' . csrf_field() . '
+                ' . method_field("DELETE") . '
+                <button type="submit" class="delete btn btn-danger btn-sm"
+                    onclick="return confirm(\'Anda pasti?\')">
+                    <i class="fas fa-trash"></i>
+                    Padam
+            </form>';
 
         return $x;
     }
