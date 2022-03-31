@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
-            <h1 class="text-black-50">Schools</h1>
+            <h1 class="text-black-50">Pengurusan Maklumat Sekolah</h1>
         </div>
     </div>
     <div class="container-fluid mx-auto">
@@ -12,11 +12,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            List of Schools
+                            Senarai Sekolah
                         </h3>
                         <a href="#" onclick="alert('Feature not ready')" class="btn btn-primary float-right pull-right">
                             <i class="fas fa-plus"></i>
-                            Add School
+                            Tambah Sekolah
                         </a>
                     </div>
                     <div class="card-body">
@@ -26,9 +26,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>School</th>
-                                        <th>School Code</th>
-                                        <th>Action</th>
+                                        <th>Nama Sekolah</th>
+                                        <th>Kod Sekolah</th>
+                                        <th>Tindakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>

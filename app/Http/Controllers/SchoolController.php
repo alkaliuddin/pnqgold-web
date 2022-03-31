@@ -51,14 +51,31 @@ class SchoolController extends Controller {
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $actionBtn = '
-                    <a href="javascript:void(0)" class="edit btn btn-success btn-sm">Details</a>
-                    <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>
-                    ';
-                    return $actionBtn;
+                    return $this->getActionColumn($row);
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
+    }
+
+    public function getActionColumn($data) {
+        $detailsURL = '#';
+        $deleteURL = '#';
+
+        $x = '
+            <form action=' . $deleteURL . ' method="POST">
+                <a href=' . $detailsURL . ' class="edit btn btn-success btn-sm">
+                    <i class="fas fa-edit"></i>
+                    Sunting
+                </a>
+                ' . csrf_field() . '
+                ' . method_field("DELETE") . '
+                <button type="submit" class="delete btn btn-danger btn-sm"
+                    onclick="return confirm(\'Anda pasti?\')">
+                    <i class="fas fa-trash"></i>
+                    Padam
+            </form>';
+
+        return $x;
     }
 }

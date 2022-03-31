@@ -5,7 +5,7 @@
 <li class="nav-item">
     <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Dashboard</p>
+        <p>Utama</p>
     </a>
 </li>
 <li class="nav-item">

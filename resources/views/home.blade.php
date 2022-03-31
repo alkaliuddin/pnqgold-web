@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
-            <h1 class="text-black-50">Dashboard</h1>
+            <h1 class="text-black-50">Utama</h1>
         </div>
     </div>
     <div class="container-fluid">

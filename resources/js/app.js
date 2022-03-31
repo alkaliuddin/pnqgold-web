@@ -91,6 +91,12 @@ jQuery(document).ready(function($) {
                 info: "Memapar muka surat _PAGE_ / _PAGES_",
                 infoEmpty: "Tiada rekod dijumpai",
                 infoFiltered: "(ditapis daripada _MAX_ jumlah rekod)",
+                paginate: {
+                    first: "Pertama",
+                    last: "Akhir",
+                    next: "Seterus",
+                    previous: "Sebelum",
+                },
             },
         });
     });
@@ -121,6 +127,19 @@ jQuery(document).ready(function($) {
                     searchable: true,
                 },
             ],
+            language: {
+                lengthMenu: "Papar _MENU_ rekod setiap muka surat",
+                zeroRecords: "Tiada maklumat dijumpai",
+                info: "Memapar muka surat _PAGE_ / _PAGES_",
+                infoEmpty: "Tiada rekod dijumpai",
+                infoFiltered: "(ditapis daripada _MAX_ jumlah rekod)",
+                paginate: {
+                    first: "Pertama",
+                    last: "Akhir",
+                    next: "Seterus",
+                    previous: "Sebelum",
+                },
+            },
         });
     });
 });
