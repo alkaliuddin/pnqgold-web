@@ -20,7 +20,7 @@ require __DIR__ . '/helpdesk.php';
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
