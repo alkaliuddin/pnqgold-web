@@ -17,10 +17,10 @@
                     <div class="icon">
                         <i class="fas fa-plus"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    {{-- <a href="#" class="small-box-footer">
                         Maklumat lanjut
                         <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <div class="col-lg-3 col-6">
@@ -32,10 +32,10 @@
                     <div class="icon">
                         <i class="fas fa-sync"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    {{-- <a href="#" class="small-box-footer">
                         Maklumat lanjut
                         <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <div class="col-lg-3 col-6">
@@ -47,10 +47,10 @@
                     <div class="icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    {{-- <a href="#" class="small-box-footer">
                         Maklumat lanjut
                         <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <div class="col-lg-3 col-6">
@@ -62,10 +62,10 @@
                     <div class="icon">
                         <i class="fas fa-folder-plus"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    {{-- <a href="#" class="small-box-footer">
                         Maklumat lanjut
                         <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>

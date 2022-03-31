@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\SchoolController;
 
+require __DIR__ . '/helpdesk.php';
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,18 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::controller(ComplaintController::class)->group(function () {
-        Route::get('complaints/list', 'getComplaints')->name('complaints.list');
-    });
-    Route::controller(SchoolController::class)->group(function () {
-        Route::get('schools/list', 'getSchools')->name('schools.list');
-    });
-
-    Route::resource('complaints', ComplaintController::class);
-    Route::resource('schools', SchoolController::class);
+Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
+    Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
 });
 
 Auth::routes();

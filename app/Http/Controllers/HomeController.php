@@ -26,6 +26,6 @@ class HomeController extends Controller {
         $progressCount = Complaint::where('status', 'Dalam Proses')->get();
         $completedCount = Complaint::where('status', 'Selesai')->get();
 
-        return view('home', compact('newCount', 'progressCount', 'completedCount'));
+        return view('admin.dashboard', compact('newCount', 'progressCount', 'completedCount'));
     }
 }
