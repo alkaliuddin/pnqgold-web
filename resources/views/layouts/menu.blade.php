@@ -1,6 +1,6 @@
 <!-- need to remove -->
 <li class="nav-header">
-    GENERAL
+    UMUM
 </li>
 <li class="nav-item">
     <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
@@ -11,35 +11,35 @@
 <li class="nav-item">
     <a href="{{ route('complaints.index') }}" class="nav-link {{ Request::is('complaints') ? 'active' : '' }}">
         <i class="nav-icon fas fa-table"></i>
-        <p>Tickets</p>
+        <p>Tiket Aduan</p>
     </a>
 </li>
 <li class="nav-item">
     <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
         <i class="nav-icon fas fa-print"></i>
-        <p>Reports</p>
+        <p>Laporan</p>
     </a>
 </li>
 
 <li class="nav-header">
-    ADMINISTRATION
+    KAWALAN ADMIN
 </li>
 <li class="nav-item">
     <a href="{{ route('schools.index') }}" class="nav-link {{ Request::is('schools') ? 'active' : '' }}">
         <i class="nav-icon fas fa-school"></i>
-        <p>Schools</p>
+        <p>Sekolah</p>
     </a>
 </li>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
         <i class="nav-icon fas fa-tasks"></i>
-        <p>Statuses</p>
+        <p>Status</p>
     </a>
 </li>
 <li class="nav-item">
     <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
         <i class="nav-icon fas fa-users"></i>
-        <p>Users</p>
+        <p>Pengguna</p>
     </a>
 </li>
 <li class="nav-item">
@@ -47,4 +47,4 @@
         <i class="nav-icon fas fa-cog"></i>
         <p>Settings</p>
     </a>
-</li>
+</li> --}}
