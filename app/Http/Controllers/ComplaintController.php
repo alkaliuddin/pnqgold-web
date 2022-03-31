@@ -27,6 +27,7 @@ class ComplaintController extends Controller {
         $newCount = Complaint::where('status', 'Baru')->get();
         $progressCount = Complaint::where('status', 'Dalam Proses')->get();
         $completedCount = Complaint::where('status', 'Selesai')->get();
+        $totalCount = $newCount->count() + $progressCount->count() + $completedCount->count();
 
         $data = Complaint::with('School')
             ->latest('complaints.updated_at')
@@ -34,7 +35,7 @@ class ComplaintController extends Controller {
 
         // dd($data->toArray());
 
-        return view('admin.complaint.index', compact('newCount', 'progressCount', 'completedCount'));
+        return view('admin.complaint.index', compact('newCount', 'progressCount', 'completedCount', 'totalCount'));
     }
 
     public function create() {

@@ -63,7 +63,7 @@
                             Jumlah
                         </span>
                         <span class="info-box-number text-lg">
-                            {{ $total = $newCount->count() + $progressCount->count() + $completedCount->count() }}
+                            {{ $totalCount }}
                         </span>
                     </div>
                 </div>

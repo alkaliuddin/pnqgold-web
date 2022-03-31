@@ -40,11 +40,11 @@ class Complaint extends Model {
 
     protected $casts = [
         'id' => 'integer',
-        'complaint_isd_code' => 'integer',
-        'school_id' => 'integer',
+        'complaint_isd_code' => 'string',
+        'school_id' => 'string',
         'asset_model' => 'string',
-        'tagging_no' => 'integer',
-        'serial_no' => 'integer',
+        'tagging_no' => 'string',
+        'serial_no' => 'string',
         'complainant_name' => 'string',
         'complainant_email' => 'string',
         'complainant_phone' => 'string',

@@ -23,23 +23,7 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-__webpack_require__(/*! admin-lte */ "./node_modules/admin-lte/dist/js/adminlte.min.js");
-
-__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-__webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
-
-__webpack_require__(/*! datatables.net-buttons-bs4 */ "./node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.js");
-
-__webpack_require__(/*! datatables.net-fixedheader-bs4 */ "./node_modules/datatables.net-fixedheader-bs4/js/fixedHeader.bootstrap4.js");
-
-__webpack_require__(/*! datatables.net-responsive-bs4 */ "./node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.js");
-
-__webpack_require__(/*! datatables.net-rowgroup-bs4 */ "./node_modules/datatables.net-rowgroup-bs4/js/rowGroup.bootstrap4.js");
-
-__webpack_require__(/*! datatables.net-rowreorder-bs4 */ "./node_modules/datatables.net-rowreorder-bs4/js/rowReorder.bootstrap4.js"); // JS
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // JS
 
 
 $(document).ready(function () {}); // JQuery
@@ -177,6 +161,16 @@ try {
   __webpack_require__(/*! admin-lte */ "./node_modules/admin-lte/dist/js/adminlte.min.js");
 
   __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+
+  __webpack_require__(/*! datatables.net-buttons-bs4 */ "./node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.js");
+
+  __webpack_require__(/*! datatables.net-fixedheader-bs4 */ "./node_modules/datatables.net-fixedheader-bs4/js/fixedHeader.bootstrap4.js");
+
+  __webpack_require__(/*! datatables.net-responsive-bs4 */ "./node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.js");
+
+  __webpack_require__(/*! datatables.net-rowgroup-bs4 */ "./node_modules/datatables.net-rowgroup-bs4/js/rowGroup.bootstrap4.js");
+
+  __webpack_require__(/*! datatables.net-rowreorder-bs4 */ "./node_modules/datatables.net-rowreorder-bs4/js/rowReorder.bootstrap4.js");
 } catch (e) {}
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

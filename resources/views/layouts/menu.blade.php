@@ -1,6 +1,7 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}">
+    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}"
+        onclick="return confirm('Kembali ke Laman Utama?')">
         <i class="nav-icon fas fa-globe"></i>
         <p>Laman Utama</p>
     </a>
@@ -44,21 +45,3 @@
         <p>Aset</p>
     </a>
 </li>
-{{-- <li class="nav-item">
-    <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-tasks"></i>
-        <p>Status</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-users"></i>
-        <p>Pengguna</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-cog"></i>
-        <p>Settings</p>
-    </a>
-</li> --}}

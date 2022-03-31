@@ -56,7 +56,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3>{{ $total = $newCount->count() + $progressCount->count() + $completedCount->count() }}</h3>
+                        <h3>{{ $totalCount }}</h3>
                         <p>Jumlah</p>
                     </div>
                     <div class="icon">
