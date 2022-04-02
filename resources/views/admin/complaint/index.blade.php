@@ -77,7 +77,7 @@
                         <h3 class="card-title">
                             Senarai Tiket Aduan
                         </h3>
-                        <a href="{{ url('/complaints/create') }}" class="btn btn-primary float-right pull-right">
+                        <a href="{{ url('/helpdesk/complaints/create') }}" class="btn btn-primary float-right pull-right">
                             <i class="fas fa-plus"></i>
                             Masuk Aduan Baru
                         </a>
