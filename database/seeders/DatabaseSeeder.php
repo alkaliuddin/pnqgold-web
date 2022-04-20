@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         // \App\Models\User::factory(10)->create();
-        $faker = Faker::create();
 
         if (env('APP_ENV') == 'local') {
             DB::table('users')->insert([
@@ -27,6 +26,8 @@ class DatabaseSeeder extends Seeder {
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
+
+            $faker = Faker::create();
 
             $this->call([
                 SchoolSeeder::class,
