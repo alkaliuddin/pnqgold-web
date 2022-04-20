@@ -18,6 +18,10 @@ require __DIR__ . '/helpdesk.php';
 |
  */
 
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -27,3 +31,5 @@ Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
 });
 
 Auth::routes();
+
+?>
