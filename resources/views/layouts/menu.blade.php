@@ -1,7 +1,6 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}"
-        onclick="return confirm('Kembali ke Laman Utama?')">
+    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}" onclick="return confirm('Kembali ke Laman Utama?')">
         <i class="nav-icon fas fa-globe"></i>
         <p>Laman Utama</p>
     </a>
@@ -17,18 +16,17 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('complaints.index') }}"
-        class="nav-link {{ Request::is('helpdesk/complaints') ? 'active' : '' }}">
+    <a href="{{ route('complaints.index') }}" class="nav-link {{ Request::is('helpdesk/complaints') ? 'active' : '' }}">
         <i class="nav-icon fas fa-envelope"></i>
         <p>Tiket Aduan</p>
     </a>
 </li>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="#" class="nav-link {{ Request::is('helpdesk/reports') ? 'active' : '' }}">
         <i class="nav-icon fas fa-print"></i>
         <p>Laporan</p>
     </a>
-</li>
+</li> --}}
 
 <li class="nav-header">
     KAWALAN ADMIN
@@ -39,9 +37,9 @@
         <p>Sekolah</p>
     </a>
 </li>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="#" class="nav-link {{ Request::is('helpdesk/assets') ? 'active' : '' }}">
         <i class="nav-icon fas fa-funnel-dollar"></i>
         <p>Aset</p>
     </a>
-</li>
+</li> --}}

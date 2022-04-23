@@ -4,7 +4,7 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="pull-left">
-                <h1 class="text-black-50">Insert new Complaint</h1>
+                <h1 class="text-black-50">Membuat Aduan Baru</h1>
             </div>
         </div>
     </div>
@@ -20,13 +20,13 @@
         </div>
     @endif
 
-    <div class="container-fluid mx-auto">
+    <div class="mx-auto container-fluid">
         <div class="flex flex-col">
             <div class="w-full">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            Complaint Details
+                            Butiran Aduan
                         </h3>
                     </div>
                     <form action="{{ route('complaints.store') }}" method="POST">
@@ -36,14 +36,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="complaint_isd_code">ISD Code</label>
-                                            <input type="text" class="form-control" id="complaint_isd_code"
-                                                name="complaint_isd_code" placeholder="Enter ISD Code">
+                                            <label for="complaint_isd_code">Kod Aduan ISD</label>
+                                            <input type="text" class="form-control" id="complaint_isd_code" name="complaint_isd_code" placeholder="Masuk Kod ISD">
                                         </div>
                                         <div class="form-group">
-                                            <label for="school_id">School Name & Code</label>
+                                            <label for="school_id">Nama Sekolah dan Kod</label>
                                             <select class="form-control" name="school_id" id="school_id">
-                                                <option value="school_id" selected disabled>-- Select School --
+                                                <option value="school_id" selected disabled>-- Pilih Sekolah --
                                                 </option>
                                                 @foreach ($schools as $key => $school)
                                                     <option value="{{ $school->id }}">
@@ -55,11 +54,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="asset_model">Asset Model</label>
+                                            <label for="asset_model">Model Aset</label>
                                             {{-- <input type="text" class="form-control" id="asset_model" name="asset_model"
                                                 placeholder="Enter Asset Model"> --}}
                                             <select class="form-control" id="asset_model" name="asset_model">
-                                                <option value="status" selected disabled>-- Select Asset Model --</option>
+                                                <option value="status" selected disabled>-- Pilih Model Aset --</option>
                                                 <option value="Komputer Riba">Komputer Riba</option>
                                                 <option value="Printer">Printer</option>
                                                 <option value="Projektor">Projektor</option>
@@ -67,14 +66,12 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="tagging_no">Tagging No.</label>
-                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no"
-                                                placeholder="Enter Tagging #">
+                                            <label for="tagging_no">No. Tagging </label>
+                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no" placeholder="Masukkan No. Tagging">
                                         </div>
                                         <div class="form-group">
-                                            <label for="serial_no">Serial No.</label>
-                                            <input type="text" class="form-control" id="serial_no" name="serial_no"
-                                                placeholder="Enter Serial #">
+                                            <label for="serial_no">No. Siri</label>
+                                            <input type="text" class="form-control" id="serial_no" name="serial_no" placeholder="Masukkan No. Siri">
                                         </div>
                                     </div>
                                 </div>
@@ -82,36 +79,30 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="complainant_name">Complainant Name</label>
-                                            <input type="text" class="form-control" id="complainant_name"
-                                                name="complainant_name" placeholder="Enter Complainant Name">
+                                            <label for="complainant_name">Nama Pengadu</label>
+                                            <input type="text" class="form-control" id="complainant_name" name="complainant_name" placeholder="Masukkan Nama Pengadu">
                                         </div>
                                         <div class="form-group">
-                                            <label for="complainant_email">Complainant Email</label>
-                                            <input type="email" class="form-control" id="complainant_email"
-                                                name="complainant_email" placeholder="Enter Complainant Email Address">
+                                            <label for="complainant_email">Emel Pangadu</label>
+                                            <input type="email" class="form-control" id="complainant_email" name="complainant_email" placeholder="Masukkan Emel Pengadu">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="complainant_phone">Complainant Phone No</label>
-                                            <input type="text" class="form-control" id="complainant_phone"
-                                                name="complainant_phone" placeholder="Enter Complainant Phone #">
+                                            <label for="complainant_phone">No. Telefon Pengadu</label>
+                                            <input type="text" class="form-control" id="complainant_phone" name="complainant_phone" placeholder="Masukkan No. Telefon Pengadu">
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="flex">
+                                <div class="grid grid-cols-2 gap-2">
                                     <div class="form-group">
                                         <label for="complaint_details" class="block mb-2">
-                                            Details
+                                            Keterangan Aduan
                                         </label>
                                         <br>
-                                        <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control"
-                                            placeholder="Leave a comment..."></textarea>
+                                        <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control" placeholder="Keterangan aduan..."></textarea>
                                     </div>
-                                </div>
-                                <div class="flex">
                                     <div class="form-group">
                                         <label for="status" class="block mb-2">
                                             Status
@@ -127,11 +118,11 @@
                                 </div>
                             </div>
                             <a href="{{ url()->previous() }}" class="btn btn-danger">
-                                <i class="fas fa-ban mr-2"></i>
+                                <i class="mr-2 fas fa-ban"></i>
                                 Cancel
                             </a>
-                            <button class="btn btn-primary float-right" type="submit">
-                                <i class="fas fa-save mr-2"></i>
+                            <button class="float-right btn btn-primary" type="submit">
+                                <i class="mr-2 fas fa-save"></i>
                                 Save
                             </button>
                         </div>
@@ -140,4 +131,5 @@
             </div>
         </div>
     </div>
+    @include('scripts.createComplaintScript')
 @endsection

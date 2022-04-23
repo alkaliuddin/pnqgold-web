@@ -1133,6 +1133,9 @@ input#checkboxLabelFive:checked ~ .box{
 .mt-3{
   margin-top: 0.75rem;
 }
+.mt-7{
+  margin-top: 1.75rem;
+}
 .block{
   display: block;
 }
@@ -1251,6 +1254,9 @@ input#checkboxLabelFive:checked ~ .box{
 .grid-cols-7{
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .flex-col{
   flex-direction: column;
 }
@@ -1259,6 +1265,9 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .flex-wrap{
   flex-wrap: wrap;
+}
+.flex-nowrap{
+  flex-wrap: nowrap;
 }
 .items-start{
   align-items: flex-start;
@@ -1280,6 +1289,12 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .justify-between{
   justify-content: space-between;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;

@@ -9,11 +9,13 @@ Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
     Route::controller(ComplaintController::class)->group(function () {
         Route::get('complaints/list', 'getComplaints')->name('complaints.list');
     });
+
     Route::controller(SchoolController::class)->group(function () {
         Route::get('schools/list', 'getSchools')->name('schools.list');
+        Route::post('/import_parse', 'parseImport')->name('import_parse');
+        Route::post('/import_process', 'processImport')->name('import_process');
     });
 
     Route::resource('complaints', ComplaintController::class);
     Route::resource('schools', SchoolController::class);
 });
-?>
