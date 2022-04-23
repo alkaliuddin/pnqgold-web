@@ -35,7 +35,9 @@
             <div>
                 @if ($errors->any())
                     <h4 class="w-full my-2 text-xl font-bold leading-tight text-center text-red-600">
+                        <i class="fas fa-exclamation-circle"></i>
                         {{ $errors->first() }}
+                        <i class="fas fa-exclamation-circle"></i>
                     </h4>
                 @endif
             </div>

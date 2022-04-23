@@ -9,6 +9,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
     <style>
         .gradient {
@@ -30,14 +31,6 @@
                     <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-9" alt="PNQ Gold Logo">
                     PNQ Gold Sdn Bhd
                 </a>
-            </div>
-            <div class="block pr-4 lg:hidden">
-                <button id="nav-toggle" class="flex items-center p-1 text-pink-800 transition duration-300 ease-in-out transform focus:shadow-outline hover:scale-105 hover:text-gray-900 focus:outline-none">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </button>
             </div>
             <div class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0" id="nav-content">
                 {{-- <ul class="items-center justify-end flex-1 list-reset lg:flex">
