@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\SchoolController;
 
@@ -25,6 +26,10 @@ if (App::environment('production')) {
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
+Route::group(['prefix' => 'guest'], function () {
+    Route::get('helpdesk', [GuestController::class, 'index'])->name('guest.index');
+});
 
 Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');

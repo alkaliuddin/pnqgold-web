@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder {
     public function run() {
         // \App\Models\User::factory(10)->create();
 
+        $this->call([
+            SchoolSeeder::class,
+        ]);
+
         if (env('APP_ENV') == 'local') {
             DB::table('users')->insert([
                 'name' => 'PNQ Admin',
@@ -26,8 +30,6 @@ class DatabaseSeeder extends Seeder {
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-
-            $faker = Faker::create();
 
             $this->call([
                 SchoolSeeder::class,

@@ -10,6 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.4",
         "axios": "^0.25",
         "bootstrap": "^4.6.0",
         "datatables.net-bs4": "^1.11.5",
@@ -24,14 +25,17 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
-        "postcss": "^8.1.14",
+        "postcss": "^8.4.12",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "tailwindcss": "^3.0.24"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "admin-lte": "3.1.0",
-        "chart.js": "^2.9.4"
+        "chart.js": "^2.9.4",
+        "flowbite": "^1.4.2",
+        "tailgrids": "^1.1.7"
     }
 }

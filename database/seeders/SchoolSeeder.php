@@ -13,6 +13,7 @@ class SchoolSeeder extends Seeder {
      *
      * @return void
      */
+
     public function run() {
         DB::table('schools')->insert([
             'school_name' => 'SK Kuala Berang',
