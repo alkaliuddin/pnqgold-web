@@ -1145,6 +1145,9 @@ input#checkboxLabelFive:checked ~ .box{
 .flex{
   display: flex;
 }
+.inline-flex{
+  display: inline-flex;
+}
 .table{
   display: table;
 }
@@ -1189,6 +1192,9 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .w-4{
   width: 1rem;
+}
+.min-w-full{
+  min-width: 100%;
 }
 .max-w-5xl{
   max-width: 64rem;
@@ -1286,8 +1292,14 @@ input#checkboxLabelFive:checked ~ .box{
 .overflow-hidden{
   overflow: hidden;
 }
+.overflow-x-auto{
+  overflow-x: auto;
+}
 .whitespace-nowrap{
   white-space: nowrap;
+}
+.break-all{
+  word-break: break-all;
 }
 .rounded-full{
   border-radius: 9999px;
@@ -1336,6 +1348,9 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .border-l{
   border-left-width: 1px;
+}
+.border-b-4{
+  border-bottom-width: 4px;
 }
 .border-gray-100{
   --tw-border-opacity: 1;
@@ -1395,6 +1410,14 @@ input#checkboxLabelFive:checked ~ .box{
 .bg-gray-900{
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+.bg-gray-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-blue-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 131 248 / var(--tw-bg-opacity));
 }
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
@@ -1496,6 +1519,9 @@ input#checkboxLabelFive:checked ~ .box{
 .pt-2{
   padding-top: 0.5rem;
 }
+.text-left{
+  text-align: left;
+}
 .text-center{
   text-align: center;
 }
@@ -1542,6 +1568,9 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .font-medium{
   font-weight: 500;
+}
+.font-light{
+  font-weight: 300;
 }
 .uppercase{
   text-transform: uppercase;
@@ -1600,6 +1629,10 @@ input#checkboxLabelFive:checked ~ .box{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(224 36 36 / var(--tw-text-opacity));
+}
 .text-gray-900{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
@@ -1607,6 +1640,10 @@ input#checkboxLabelFive:checked ~ .box{
 .text-blue-600{
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
+}
+.text-blue-500{
+  --tw-text-opacity: 1;
+  color: rgb(63 131 248 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
@@ -44805,6 +44842,10 @@ a.text-muted:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
+.hover\:border-blue-500:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+}
 .hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -44820,6 +44861,14 @@ a.text-muted:hover {
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-gray-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+.hover\:bg-blue-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(118 169 250 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-900:hover{
   --tw-text-opacity: 1;
@@ -44840,6 +44889,10 @@ a.text-muted:hover {
 .hover\:text-gray-600:hover{
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.hover\:text-blue-800:hover{
+  --tw-text-opacity: 1;
+  color: rgb(30 66 159 / var(--tw-text-opacity));
 }
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
@@ -44942,6 +44995,10 @@ a.text-muted:hover {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 @media (min-width: 540px){
+  .sm\:-mx-6{
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
   .sm\:h-9{
     height: 2.25rem;
   }
@@ -44960,6 +45017,10 @@ a.text-muted:hover {
   .sm\:px-4{
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 @media (min-width: 720px){
@@ -45040,6 +45101,10 @@ a.text-muted:hover {
     margin-left: 0px;
     margin-right: 0px;
   }
+  .lg\:-mx-8{
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
   .lg\:mt-0{
     margin-top: 0px;
   }
@@ -45063,6 +45128,10 @@ a.text-muted:hover {
   }
   .lg\:p-0{
     padding: 0px;
+  }
+  .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .lg\:text-4xl{
     font-size: 2.25rem;

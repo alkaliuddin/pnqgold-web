@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'guest'], function () {
     Route::get('helpdesk', [GuestController::class, 'index'])->name('guest.index');
+    Route::get('search', [GuestController::class, 'search'])->name('guest.searchISD');
 });
 
 Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
