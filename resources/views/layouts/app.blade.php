@@ -44,7 +44,7 @@
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-primary">
-                            <img src="https://assets.infyom.com/logo/blue_logo_150x150.png" class="img-circle elevation-2" alt="User Image">
+                            <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->name }}
                                 <small>Ahli sejak {{ Auth::user()->created_at->format('M. Y') }}</small>

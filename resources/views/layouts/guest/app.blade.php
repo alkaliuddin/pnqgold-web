@@ -33,11 +33,11 @@
                 </a>
             </div>
             <div class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0" id="nav-content">
-                {{-- <ul class="items-center justify-end flex-1 list-reset lg:flex">
+                <ul class="items-center justify-end flex-1 list-reset lg:flex">
                     <li class="mr-3">
-                        <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('welcome') }}">Utama</a>
+                        <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Login</a>
                     </li>
-                </ul> --}}
+                </ul>
             </div>
         </div>
         <hr class="py-0 my-0 border-b border-gray-100 opacity-25" />
