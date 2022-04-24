@@ -66,8 +66,8 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="tagging_no">No. Tagging </label>
-                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no" placeholder="Masukkan No. Tagging">
+                                            <label for="tagging_no">No. Pendaftaran </label>
+                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no" placeholder="Masukkan No. Pendaftaran">
                                         </div>
                                         <div class="form-group">
                                             <label for="serial_no">No. Siri</label>
@@ -119,11 +119,11 @@
                             </div>
                             <a href="{{ url()->previous() }}" class="btn btn-danger">
                                 <i class="mr-2 fas fa-ban"></i>
-                                Cancel
+                                Batal
                             </a>
                             <button class="float-right btn btn-primary" type="submit">
                                 <i class="mr-2 fas fa-save"></i>
-                                Save
+                                Simpan
                             </button>
                         </div>
                     </form>
