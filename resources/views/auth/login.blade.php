@@ -10,18 +10,16 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+            <a href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
         </div>
         <!-- /.login-logo -->
 
@@ -33,9 +31,8 @@
                 <form method="post" action="{{ url('/login') }}">
                     @csrf
 
-                    <div class="input-group mb-3">
-                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Email"
-                            class="form-control @error('email') is-invalid @enderror">
+                    <div class="mb-3 input-group">
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
@@ -44,9 +41,8 @@
                         @enderror
                     </div>
 
-                    <div class="input-group mb-3">
-                        <input type="password" name="password" placeholder="Password"
-                            class="form-control @error('password') is-invalid @enderror">
+                    <div class="mb-3 input-group">
+                        <input type="password" name="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -86,7 +82,7 @@
     </div>
     <!-- /.login-box -->
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
 
 </body>
 

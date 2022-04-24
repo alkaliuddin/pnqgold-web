@@ -10,11 +10,9 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
 </head>
 
@@ -40,9 +38,8 @@
 
                     <input type="hidden" name="token" value="{{ $token }}">
 
-                    <div class="input-group mb-3">
-                        <input type="email" name="email"
-                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email">
+                    <div class="mb-3 input-group">
+                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
@@ -51,10 +48,8 @@
                         @endif
                     </div>
 
-                    <div class="input-group mb-3">
-                        <input type="password" name="password"
-                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                            placeholder="Password">
+                    <div class="mb-3 input-group">
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
@@ -63,9 +58,8 @@
                         @endif
                     </div>
 
-                    <div class="input-group mb-3">
-                        <input type="password" name="password_confirmation" class="form-control"
-                            placeholder="Confirm Password">
+                    <div class="mb-3 input-group">
+                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
@@ -91,7 +85,7 @@
 
     </div>
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
 
 </body>
 
