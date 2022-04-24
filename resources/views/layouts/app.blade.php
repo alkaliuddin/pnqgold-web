@@ -52,7 +52,7 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <a href="#" class="btn btn-default btn-flat">Profil</a>
+                            {{-- <a href="#" class="btn btn-default btn-flat">Profil</a> --}}
                             <a href="#" class="float-right btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Log Keluar
                             </a>
