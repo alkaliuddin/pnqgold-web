@@ -66,7 +66,7 @@ class ComplaintController extends Controller {
         $ISDExists = Complaint::where('complaint_isd_code', );
         Complaint::create($data);
 
-        return redirect()->route('complaints.index')->with('success', 'Complaint saved successfully');
+        return redirect()->route('complaints.index')->with('success', 'Aduan telah disimpan');
     }
 
     public function edit(Complaint $complaint) {
@@ -93,14 +93,14 @@ class ComplaintController extends Controller {
         $complaint->touch();
 
         return redirect()->route('complaints.index')
-            ->with('success', 'Complaint updated successfully');
+            ->with('success', 'Aduan telah dikemaskini');
     }
 
     public function destroy(Complaint $complaint) {
         $complaint->delete();
 
         return redirect()->route('complaints.index')
-            ->with('success', 'Complaint deleted successfully');
+            ->with('success', 'Aduan telah dipadam');
     }
 
     public function getComplaints(Request $request) {

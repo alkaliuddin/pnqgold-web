@@ -40,19 +40,32 @@ class SchoolController extends Controller {
         $data = $request->all();
         School::create($data);
 
-        return redirect()->route('schools.index')->with('success', 'School saved successfully');
+        return redirect()->route('schools.index')->with('success', 'Maklumat sekolah telah disimpan');
     }
 
     public function edit(School $school) {
-
+        return view('admin.school.edit', compact('school'));
     }
 
     public function update(Request $request, School $school) {
+        $request->validate([
+            'school_code' => 'required',
+            'school_name' => 'required',
+        ]);
 
+        $data = $request->all();
+        $school->update($data);
+        $school->touch();
+
+        return redirect()->route('schools.index')
+            ->with('success', 'Sekolah telah dikemaskini');
     }
 
     public function destroy(School $school) {
+        $school->delete();
 
+        return redirect()->route('schools.index')
+            ->with('success', 'Sekolah telah dipadam');
     }
 
     public function parseImport(CsvImportRequest $request) {
@@ -114,8 +127,8 @@ class SchoolController extends Controller {
     }
 
     public function getActionColumn($data) {
-        $detailsURL = '#';
-        $deleteURL = '#';
+        $detailsURL = route('schools.edit', $data->id);
+        $deleteURL = route('schools.destroy', $data->id);
 
         $x = '
             <form action=' . $deleteURL . ' method="POST">

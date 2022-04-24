@@ -11,7 +11,7 @@
 
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Oops!</strong> Ada masalah dengan input anda.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <div class="mx-auto container-fluid">
+    <div class="container-fluid mx-auto">
         <div class="flex flex-col">
             <div class="w-full">
                 <div class="card">
@@ -97,14 +97,14 @@
                                 <hr>
                                 <div class="grid grid-cols-2 gap-2">
                                     <div class="form-group">
-                                        <label for="complaint_details" class="block mb-2">
+                                        <label for="complaint_details" class="mb-2 block">
                                             Keterangan Aduan
                                         </label>
                                         <br>
                                         <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control" placeholder="Keterangan aduan..."></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="status" class="block mb-2">
+                                        <label for="status" class="mb-2 block">
                                             Status
                                         </label>
                                         <br>
@@ -118,11 +118,11 @@
                                 </div>
                             </div>
                             <a href="{{ url()->previous() }}" class="btn btn-danger">
-                                <i class="mr-2 fas fa-ban"></i>
+                                <i class="fas fa-ban mr-2"></i>
                                 Batal
                             </a>
-                            <button class="float-right btn btn-primary" type="submit">
-                                <i class="mr-2 fas fa-save"></i>
+                            <button class="btn btn-primary float-right" type="submit">
+                                <i class="fas fa-save mr-2"></i>
                                 Simpan
                             </button>
                         </div>
