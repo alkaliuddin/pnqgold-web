@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ config('app.name') }} :: Helpdesk Pengguna</title>
+    <title>PNQ Gold :: Helpdesk Pengguna</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z-150x147.png" sizes="32x32">
+    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z.png" sizes="192x192">
 
     <style>
         .gradient {
@@ -25,17 +28,28 @@
 <body class="leading-normal tracking-normal gradient">
     <!--Nav-->
     <nav id="header" class="fixed top-0 z-30 w-full">
-        <div class="container flex flex-wrap items-center justify-between w-full py-2 mx-auto mt-0">
+        <div class="container flex flex-wrap items-center justify-between w-4/5 py-2 mx-auto mt-0">
             <div class="flex items-center pl-4">
-                <a class="text-xl font-bold no-underline toggleColour hover:no-underline lg:text-4xl" href="{{ route('welcome') }}">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-9" alt="PNQ Gold Logo">
-                    PNQ Gold Sdn Bhd
-                </a>
+                <a class="font-bold no-underline text-md toggleColour hover:no-underline lg:text-4xl" href="https://pnqgold.com.my/">
+                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline h-6 mr-3 sm:h-9" alt="PNQ Gold Logo">
+                    <span class="invisible lg:visible">PNQ Gold Sdn Bhd</span> </a>
+            </div>
+            <div class="block pr-4 lg:hidden">
+                <button id="nav-toggle" class="flex items-center p-1 text-pink-800 transition duration-300 ease-in-out transform focus:shadow-outline hover:scale-105 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
             </div>
             <div class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0" id="nav-content">
                 <ul class="items-center justify-end flex-1 list-reset lg:flex">
                     <li class="mr-3">
-                        <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Login</a>
+                        @auth
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Dashboard</a>
+                        @else
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Log Masuk</a>
+                        @endauth
                     </li>
                 </ul>
             </div>
@@ -44,6 +58,7 @@
     </nav>
     <!--Hero-->
     <div class="pt-16">
+
     </div>
     <div class="relative -mt-12 lg:-mt-24">
         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -69,6 +84,57 @@
             @yield('content')
         </section>
     </div>
+
+    <!-- Main Footer -->
+    <footer class="p-4 bg-white rounded-lg shadow dark:bg-gray-800 md:px-6 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+
+        </div>
+        <span class="block text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+            © 2022 <a href="https://pnqgold.com.my/" class="hover:text-blue-400 hover:underline">PNQ GOLD SDN BHD</a>. All Rights Reserved.
+        </span>
+    </footer>
+
+
+    <script>
+        /*Toggle dropdown list*/
+        /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+        var navMenuDiv = document.getElementById("nav-content");
+        var navMenu = document.getElementById("nav-toggle");
+
+        document.onclick = check;
+
+        function check(e) {
+            var target = (e && e.target) || (event && event.srcElement);
+
+            //Nav Menu
+            if (!checkParent(target, navMenuDiv)) {
+                // click NOT on the menu
+                if (checkParent(target, navMenu)) {
+                    // click on the link
+                    if (navMenuDiv.classList.contains("hidden")) {
+                        navMenuDiv.classList.remove("hidden");
+                    } else {
+                        navMenuDiv.classList.add("hidden");
+                    }
+                } else {
+                    // click both outside link and outside menu, hide menu
+                    navMenuDiv.classList.add("hidden");
+                }
+            }
+        }
+
+        function checkParent(t, elm) {
+            while (t.parentNode) {
+                if (t == elm) {
+                    return true;
+                }
+                t = t.parentNode;
+            }
+            return false;
+        }
+    </script>
 </body>
 
 </html>

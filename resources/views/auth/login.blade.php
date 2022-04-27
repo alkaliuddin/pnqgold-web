@@ -19,9 +19,12 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
+            <a href="{{ url('/') }}">
+                <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline mr-3" alt="PNQ Gold Logo">
+                <br>
+                <b>{{ config('app.name') }}</b>
+            </a>
         </div>
-        <!-- /.login-logo -->
 
         <!-- /.login-box-body -->
         <div class="card">

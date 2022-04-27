@@ -1,75 +1,64 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-    const monthly_labels = [
-        'Januari',
-        'Februari',
-        'Mac',
-        'April',
-        'Mei',
-        'Jun',
-        'Julai',
-        'Ogos',
-        'September',
-        'October',
-        'November',
-        'December'
-    ];
+<script type="text/javascript">
+    var labels = {{ Js::from($year) }};
 
-    var newTixData = [{!! $newCount->count() !!}, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    var progressTixData = [{!! $progressCount->count() !!}, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    var completedTixData = [{!! $completedCount->count() !!}, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    var totalTixData = [{!! $totalCount !!}, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var totals = {{ Js::from($yearlyTotal) }};
+    var newTotals = {{ Js::from($yearlyNew) }};
+    var progressTotals = {{ Js::from($yearlyProgress) }};
+    var completedTotals = {{ Js::from($yearlyCompleted) }};
 
+    const data = {
+        labels: labels,
+        datasets: [{
+                label: 'Jumlah',
+                type: 'line',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: totals,
+            },
+            {
+                label: 'Baru',
+                type: 'bar',
+                backgroundColor: 'rgb(3, 138, 255)',
+                borderColor: 'rgb(3, 138, 255)',
+                data: newTotals,
+            },
+            {
+                label: 'Dalam Proses',
+                type: 'bar',
+                backgroundColor: 'rgb(255, 240, 0)',
+                borderColor: 'rgb(255, 240, 0)',
+                data: progressTotals,
+            },
+            {
+                label: 'Selesai',
+                type: 'bar',
+                backgroundColor: 'rgb(38, 194, 129)',
+                borderColor: 'rgb(38, 194, 129)',
+                data: completedTotals,
+            }
+        ]
+    };
 
-    const ctxBar = document.getElementById('barChart').getContext('2d');
-    const barChart = new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-            labels: monthly_labels,
-            datasets: [{
-                    label: 'Bil. Tiket Baru',
-                    data: newTixData,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1,
-                    order: 2
-                },
-                {
-                    label: 'Bil. Tiket Dalam Proses',
-                    data: progressTixData,
-                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                    borderColor: 'rgba(255, 206, 86, 1)',
-                    borderWidth: 1,
-                    order: 2
-                },
-                {
-                    label: 'Bil. Tiket Selesai',
-                    data: completedTixData,
-                    backgroundColor: 'rgba(25, 192, 128, 0.2)',
-                    borderColor: 'rgba(25, 192, 128, 1)',
-                    borderWidth: 1,
-                    order: 2
-                },
-                {
-                    type: 'line',
-                    label: 'Jumlah Tiket',
-                    data: totalTixData,
-                    backgroundColor: 'rgba(25, 25, 25, 0)',
-                    borderColor: 'rgba(25, 25, 25, 0.8)',
-                    borderWidth: 1,
-                    order: 1
-                }
-            ]
-        },
+    const config = {
+        type: 'scatter',
+        data: data,
         options: {
             scales: {
-                yAxes: [{
+                y: {
+                    beginAtZero: true,
                     ticks: {
-                        beginAtZero: true
+                        stepSize: 1
                     }
-                }]
+                }
             }
         }
-    });
+    };
+
+    const myChart = new Chart(
+        document.getElementById('barChart'),
+        config
+    );
 </script>

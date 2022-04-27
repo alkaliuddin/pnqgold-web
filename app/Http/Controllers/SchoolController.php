@@ -130,18 +130,26 @@ class SchoolController extends Controller {
         $detailsURL = route('schools.edit', $data->id);
         $deleteURL = route('schools.destroy', $data->id);
 
+        // $x = '
+        //     <form action=' . $deleteURL . ' method="POST">
+        //         <a href=' . $detailsURL . ' class="edit btn btn-success btn-sm">
+        //             <i class="fas fa-edit"></i>
+        //             Sunting
+        //         </a>
+        //         ' . csrf_field() . '
+        //         ' . method_field("DELETE") . '
+        //         <button type="submit" class="delete btn btn-danger btn-sm"
+        //             onclick="return confirm(\'Anda pasti?\')">
+        //             <i class="fas fa-trash"></i>
+        //             Padam
+        //     </form>';
+
         $x = '
             <form action=' . $deleteURL . ' method="POST">
                 <a href=' . $detailsURL . ' class="edit btn btn-success btn-sm">
                     <i class="fas fa-edit"></i>
                     Sunting
                 </a>
-                ' . csrf_field() . '
-                ' . method_field("DELETE") . '
-                <button type="submit" class="delete btn btn-danger btn-sm"
-                    onclick="return confirm(\'Anda pasti?\')">
-                    <i class="fas fa-trash"></i>
-                    Padam
             </form>';
 
         return $x;

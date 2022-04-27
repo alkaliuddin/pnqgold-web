@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ config('app.name') }}</title>
+    <title>PNQ Gold :: Helpdesk Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
+
+    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z-150x147.png" sizes="32x32">
+    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z.png" sizes="192x192">
 
     @routes
     <script src="{{ asset(mix('js/app.js')) }}"></script>
@@ -80,8 +83,9 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.0.5
             </div>
-            <strong>Copyright &copy; 2014-2022 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
+            <strong>PNQ GOLD SDN BHD © 2022</strong>. All rights Reserved
+            <br>
+            <strong>COPYRIGHT &copy; 2014-2022 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
         </footer>
     </div>
 

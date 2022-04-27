@@ -6,7 +6,7 @@
             <h1 class="text-black-50">Pengurusan Tiket Aduan</h1>
         </div>
     </div>
-    <div class="container-fluid mx-auto">
+    <div class="mx-auto container-fluid">
         <div class="row">
             <div class="col-lg-3 col-6">
                 <div class="info-box">
@@ -17,7 +17,7 @@
                         <span class="info-box-text">
                             Baru
                         </span>
-                        <span class="info-box-number text-lg">
+                        <span class="text-lg info-box-number">
                             {{ $newCount->count() }}
                         </span>
                     </div>
@@ -32,7 +32,7 @@
                         <span class="info-box-text">
                             Dalam Proses
                         </span>
-                        <span class="info-box-number text-lg">
+                        <span class="text-lg info-box-number">
                             {{ $progressCount->count() }}
                         </span>
                     </div>
@@ -47,7 +47,7 @@
                         <span class="info-box-text">
                             Selesai
                         </span>
-                        <span class="info-box-number text-lg">
+                        <span class="text-lg info-box-number">
                             {{ $completedCount->count() }}
                         </span>
                     </div>
@@ -62,7 +62,7 @@
                         <span class="info-box-text">
                             Jumlah
                         </span>
-                        <span class="info-box-number text-lg">
+                        <span class="text-lg info-box-number">
                             {{ $totalCount }}
                         </span>
                     </div>
@@ -77,15 +77,14 @@
                         <h3 class="card-title">
                             Senarai Tiket Aduan
                         </h3>
-                        <a href="{{ url('/helpdesk/complaints/create') }}" class="btn btn-primary float-right pull-right">
+                        <a href="{{ route('complaints.create') }}" class="float-right btn btn-primary pull-right">
                             <i class="fas fa-plus"></i>
                             Masuk Aduan Baru
                         </a>
                     </div>
                     <div class="card-body">
                         <div class="p-0">
-                            <table class="table table-auto table-bordered complaints-datatable dt-responsive nowrap"
-                                style="width:100%">
+                            <table class="table table-auto table-bordered complaints-datatable dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th data-priority="1">Tarikh Masuk</th>

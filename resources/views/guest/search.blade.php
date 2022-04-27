@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center justify-center">
+            <div class="flex items-center content-center justify-center">
                 <a href="{{ route('guest.index') }}">
                     <button class="px-4 py-2 font-bold text-white bg-blue-500 border-b-4 border-blue-700 rounded hover:border-blue-500 hover:bg-blue-400">
                         Kembali
@@ -21,84 +21,106 @@
                 </a>
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex items-center content-center justify-center">
+                <div class="pt-4 md:px-8">
+                    <table class="w-full px-8 border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Kod Aduan ISD</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Kod Sekolah</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Nama Sekolah</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Model Aset</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">No. Pendaftaran</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">No Siri</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Nama & Emel Pengadu</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">No. Telefon Pengadu</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Status</th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">Keterangan Aduan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($complaints as $complaint)
+                                <tr class="flex flex-row flex-wrap mb-10 bg-white lg:flex-no-wrap lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100">
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->complaint_isd_code }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Country</span>
+                                        {{ $complaint->school->school_code }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Country</span>
+                                        {{ $complaint->school->school_name }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->asset_model }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->tagging_no }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->serial_no }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->complainant_name }}
+                                        <br>
+                                        <i>{{ $complaint->complainant_email }}</i>
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b whitespace-nowrap lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod Aduan ISD</span>
+                                        {{ $complaint->complainant_phone }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Status</span>
+                                        <?php $status = $complaint->status; ?>
+                                        @switch($status)
+                                            @case('Selesai')
+                                                <span class="px-3 py-1 text-xs font-bold bg-green-400 rounded">
+                                                    {{ $complaint->status }}
+                                                </span>
+                                            @break
+
+                                            @case('Dalam Proses')
+                                                <span class="px-3 py-1 text-xs font-bold bg-yellow-400 rounded">
+                                                    {{ $complaint->status }}
+                                                </span>
+                                            @break
+
+                                            @case('Baru')
+                                                <span class="px-3 py-1 text-xs font-bold bg-blue-400 rounded">
+                                                    {{ $complaint->status }}
+                                                </span>
+                                            @break
+
+                                            @default
+                                                <span class="px-3 py-1 text-xs font-bold bg-gray-400 rounded">
+                                                    N/A
+                                                </span>
+                                        @endswitch
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Keterangan Aduan</span>
+                                        <br>
+                                        {{ $complaint->complaint_details }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col items-center content-center justify-center">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div class="overflow-x-auto">
-                            <table class="min-w-full">
-                                <thead class="border-b">
-                                    <tr>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Kod Aduan ISD
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Kod Sekolah
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Nama Sekolah
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Model Aset
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            No Tagging
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            No Siri
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Nama & Emel Pengadu
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            No. Telefon Pengadu
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Status
-                                        </th>
-                                        <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
-                                            Keterangan Aduan
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($complaints as $complaint)
-                                        <tr class="border-b">
-                                            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->complaint_isd_code }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->school->school_code }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->school->school_name }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->asset_model }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->tagging_no }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->serial_no }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->complainant_name }}
-                                                <br>
-                                                {{ $complaint->complainant_email }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->complainant_phone }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                {{ $complaint->status }}
-                                            </td>
-                                            <td class="px-6 py-4 text-sm font-light text-gray-900 break-all">
-                                                {{ $complaint->complaint_details }}
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+
                         </div>
                     </div>
                 </div>

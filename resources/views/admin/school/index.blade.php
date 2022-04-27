@@ -14,7 +14,7 @@
                         <h3 class="card-title">
                             Senarai Sekolah
                         </h3>
-                        <a href="{{ url('/helpdesk/schools/create') }}" class="float-right btn btn-primary pull-right">
+                        <a href="{{ route('schools.create') }}" class="float-right btn btn-primary pull-right">
                             <i class="fas fa-plus"></i>
                             Tambah Sekolah
                         </a>

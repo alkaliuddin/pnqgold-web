@@ -31,7 +31,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::group(['prefix' => 'helpdesk'], function () {
+Route::group(['prefix' => 'pengguna'], function () {
 // Authentication Routes...
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', [LoginController::class, 'login']);
@@ -60,7 +60,7 @@ Route::group(['prefix' => 'helpdesk'], function () {
     Route::get('search', [GuestController::class, 'search'])->name('guest.searchISD');
 });
 
-Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
 });
 

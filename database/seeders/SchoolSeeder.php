@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-
+use App\Models\School;
+use Carbon\Carbon;
 class SchoolSeeder extends Seeder {
     /**
      * Run the database seeds.
@@ -15,39 +13,22 @@ class SchoolSeeder extends Seeder {
      */
 
     public function run() {
-        DB::table('schools')->insert([
-            'school_name' => 'SK Kuala Berang',
-            'school_code' => 'TBA5001',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
 
-        DB::table('schools')->insert([
-            'school_name' => 'SK Bukit Perah',
-            'school_code' => 'TBA5003',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        $csvFile = fopen(base_path("database/data/schools2021.csv"), "r");
 
-        DB::table('schools')->insert([
-            'school_name' => 'SK Bukit Diman',
-            'school_code' => 'TBA5005',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
+            if (!$firstline) {
+                School::create([
+                    "school_name" => $data['0'],
+                    "school_code" => $data['1'],
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ]);
+            }
+            $firstline = false;
+        }
 
-        DB::table('schools')->insert([
-            'school_name' => 'SK Tengkawang',
-            'school_code' => 'TBA5013',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('schools')->insert([
-            'school_name' => 'SK Kua',
-            'school_code' => 'TBA5020',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        fclose($csvFile);
     }
 }

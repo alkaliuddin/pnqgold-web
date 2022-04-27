@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a995625424e587ec4492e6a807022bc7",
+    "content-hash": "710bb5e38d318ca762ac8557cb85d1c6",
     "packages": [
         {
             "name": "brick/math",
@@ -65,6 +65,108 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "chartisan/php",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Chartisan/PHP.git",
+                "reference": "85d2352077800e9bcb411aec1ff7e4d23eef93a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Chartisan/PHP/zipball/85d2352077800e9bcb411aec1ff7e4d23eef93a1",
+                "reference": "85d2352077800e9bcb411aec1ff7e4d23eef93a1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chartisan\\PHP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik Campobadal Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "Chartisan's PHP backend",
+            "support": {
+                "issues": "https://github.com/Chartisan/PHP/issues",
+                "source": "https://github.com/Chartisan/PHP/tree/1.2.1"
+            },
+            "time": "2020-11-05T13:13:58+00:00"
+        },
+        {
+            "name": "consoletvs/charts",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Chartisan/Charts.git",
+                "reference": "b6c47dedeebf95c690f3604355ddb002677b6ae6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Chartisan/Charts/zipball/b6c47dedeebf95c690f3604355ddb002677b6ae6",
+                "reference": "b6c47dedeebf95c690f3604355ddb002677b6ae6",
+                "shasum": ""
+            },
+            "require": {
+                "chartisan/php": "^1.2.0",
+                "illuminate/console": "^7.14.1|^8.0|^9.0",
+                "illuminate/contracts": "^7.14.1|^8.0|^9.0",
+                "illuminate/http": "^7.14.1|^8.0|^9.0",
+                "illuminate/support": "^7.14.1|^8.0|^9.0",
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ConsoleTVs\\Charts\\ChartsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConsoleTVs\\Charts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik C. Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "The missing charting library on laravel, powered by Chartisan",
+            "support": {
+                "issues": "https://github.com/Chartisan/Charts/issues",
+                "source": "https://github.com/Chartisan/Charts/tree/7.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ConsoleTVs",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/ErikCampobadal",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-02-09T15:10:47+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -436,6 +538,73 @@
                 }
             ],
             "time": "2021-10-11T09:18:27+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/d7f08a622b3346766325488aa32ddc93ccdecc75",
+                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "psr/container": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "doctrine/persistence": "^1.3 || ^2.0",
+                "ext-intl": "*",
+                "symfony/phpunit-bridge": "^4.4 || ^5.2"
+            },
+            "suggest": {
+                "doctrine/orm": "Required to use Faker\\ORM\\Doctrine",
+                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+                "ext-mbstring": "Required for multibyte Unicode string functionality."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "v1.19-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.19.0"
+            },
+            "time": "2022-02-02T17:38:57+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -5614,73 +5783,6 @@
             "time": "2020-10-16T08:27:54+00:00"
         },
         {
-            "name": "fakerphp/faker",
-            "version": "v1.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/d7f08a622b3346766325488aa32ddc93ccdecc75",
-                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0",
-                "psr/container": "^1.0 || ^2.0",
-                "symfony/deprecation-contracts": "^2.2 || ^3.0"
-            },
-            "conflict": {
-                "fzaninotto/faker": "*"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "doctrine/persistence": "^1.3 || ^2.0",
-                "ext-intl": "*",
-                "symfony/phpunit-bridge": "^4.4 || ^5.2"
-            },
-            "suggest": {
-                "doctrine/orm": "Required to use Faker\\ORM\\Doctrine",
-                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
-                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
-                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
-                "ext-mbstring": "Required for multibyte Unicode string functionality."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "v1.19-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "support": {
-                "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.19.0"
-            },
-            "time": "2022-02-02T17:38:57+00:00"
-        },
-        {
             "name": "filp/whoops",
             "version": "2.14.5",
             "source": {
@@ -8277,7 +8379,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0.2"
+        "php": "^7.2|^8.0.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

@@ -6,8 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use Faker\Factory as Faker;
+Use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder {
     /**
@@ -25,14 +24,13 @@ class DatabaseSeeder extends Seeder {
         if (env('APP_ENV') == 'local') {
             DB::table('users')->insert([
                 'name' => 'PNQ Admin',
-                'email' => 'admin@pnqgold.com',
-                'password' => Hash::make('admin@pnqgold.com'),
-                'created_at' => now(),
-                'updated_at' => now(),
+                'email' => 'helpdesk@pnqgold.com.my',
+                'password' => Hash::make('helpdesk@pnqgold.com.my'),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]);
 
             $this->call([
-                SchoolSeeder::class,
                 ComplaintSeeder::class,
             ]);
         }

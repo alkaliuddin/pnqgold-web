@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
 class AppServiceProvider extends ServiceProvider {
     /**
      * Register any application services.
@@ -20,6 +19,10 @@ class AppServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        //
+        if (env('APP_ENV') == 'production') {
+            $this->app->bind('path.public', function () {
+                return base_path() . '/../public_html/helpdesk/';
+            });
+        }
     }
 }

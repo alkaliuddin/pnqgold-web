@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Charts\ComplaintChart;
 use App\Models\Complaint;
-use App\Models\School;
 use Carbon\Carbon;
+use DB;
 
 class HomeController extends Controller {
     /**
@@ -23,13 +23,54 @@ class HomeController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $selectedYear = 2021;
+        // $newComplaints = Complaint::where('status', 'Baru')->orderBy('created_at')->select('created_at')->get();
+        $newComplaints = Complaint::where('status', 'Baru')->orderBy('created_at')->pluck('status', 'created_at');
+        $progressComplaints = Complaint::where('status', 'Dalam Proses')->orderBy('created_at')->pluck('status', 'created_at');
+        $completedComplaints = Complaint::where('status', 'Selesai')->orderBy('created_at')->pluck('status', 'created_at');
+        $totalCount = $newComplaints->count() + $progressComplaints->count() + $completedComplaints->count();
 
-        $newCount = Complaint::where('status', 'Baru')->get();
-        $progressCount = Complaint::where('status', 'Dalam Proses')->get();
-        $completedCount = Complaint::where('status', 'Selesai')->get();
-        $totalCount = $newCount->count() + $progressCount->count() + $completedCount->count();
+        $year = [];
+        for ($i = 5; $i >= 0; $i--) {
+            $dt = Carbon::today()->subYear($i)->format('Y');
+            array_push($year, $dt);
+        }
 
-        return view('admin.dashboard', compact('newCount', 'progressCount', 'completedCount', 'totalCount'));
+        $yearlyTotal = [];
+        foreach ($year as $key => $value) {
+            $yearlyTotal[] = Complaint::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"), $value)
+                ->count();
+        }
+
+        $yearlyNew = [];
+        foreach ($year as $key => $value) {
+            $yearlyNew[] = Complaint::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"), $value)
+                ->where('status', 'Baru')
+                ->count();
+        }
+
+        $yearlyProgress = [];
+        foreach ($year as $key => $value) {
+            $yearlyProgress[] = Complaint::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"), $value)
+                ->where('status', 'Dalam Proses')
+                ->count();
+        }
+
+        $yearlyCompleted = [];
+        foreach ($year as $key => $value) {
+            $yearlyCompleted[] = Complaint::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"), $value)
+                ->where('status', 'Selesai')
+                ->count();
+        }
+
+        return view('admin.dashboard', compact(
+            'newComplaints',
+            'progressComplaints',
+            'completedComplaints',
+            'totalCount',
+            'year',
+            'yearlyTotal',
+            'yearlyNew',
+            'yearlyProgress',
+            'yearlyCompleted'));
     }
 }

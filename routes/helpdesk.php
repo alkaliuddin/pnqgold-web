@@ -4,7 +4,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\SchoolController;
 
-Route::group(['prefix' => 'helpdesk', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+
+    Route::get('complaints/create')->name('complaints.create');
+    Route::get('schools/create')->name('schools.create');
 
     Route::controller(ComplaintController::class)->group(function () {
         Route::get('complaints/list', 'getComplaints')->name('complaints.list');

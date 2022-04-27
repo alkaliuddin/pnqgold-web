@@ -4,8 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Factory as Faker;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use App\Models\School;
 
@@ -34,8 +33,8 @@ class ComplaintFactory extends Factory {
             'complainant_phone' => $faker->phoneNumber(),
             'complaint_details' => $faker->realText(100),
             'status' => Arr::random($status),
-            'created_at' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
-            'updated_at' => now(),
+            'created_at' => Carbon::now()->subDays(rand(2, 700))->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ];
     }
 }
