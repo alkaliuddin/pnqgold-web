@@ -1182,6 +1182,9 @@ input#checkboxLabelFive:checked ~ .box{
 .h-8{
   height: 2rem;
 }
+.h-2{
+  height: 0.5rem;
+}
 .w-full{
   width: 100%;
 }
@@ -1211,6 +1214,12 @@ input#checkboxLabelFive:checked ~ .box{
 }
 .w-4\/5{
   width: 80%;
+}
+.w-60{
+  width: 15rem;
+}
+.w-40{
+  width: 10rem;
 }
 .min-w-full{
   min-width: 100%;
@@ -44982,6 +44991,10 @@ a.text-muted:hover {
   --tw-text-opacity: 1;
   color: rgb(118 169 250 / var(--tw-text-opacity));
 }
+.hover\:text-yellow-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(227 160 8 / var(--tw-text-opacity));
+}
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -45112,6 +45125,12 @@ a.text-muted:hover {
   .sm\:h-8{
     height: 2rem;
   }
+  .sm\:h-4{
+    height: 1rem;
+  }
+  .sm\:h-16{
+    height: 4rem;
+  }
   .sm\:w-1\/2{
     width: 50%;
   }
@@ -45187,6 +45206,12 @@ a.text-muted:hover {
   }
   .md\:w-auto{
     width: auto;
+  }
+  .md\:w-80{
+    width: 20rem;
+  }
+  .md\:w-96{
+    width: 24rem;
   }
   .md\:flex-row{
     flex-direction: row;

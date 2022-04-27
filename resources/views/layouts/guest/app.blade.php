@@ -16,7 +16,7 @@
 
     <style>
         .gradient {
-            background: linear-gradient(90deg, #3F45AA 0%, #DBB630 100%);
+            background: linear-gradient(45deg, #DBB630 0%, #3F45AA 90%);
         }
 
     </style>
@@ -31,8 +31,8 @@
         <div class="container flex flex-wrap items-center justify-between w-4/5 py-2 mx-auto mt-0">
             <div class="flex items-center pl-4">
                 <a class="font-bold no-underline text-md toggleColour hover:no-underline lg:text-4xl" href="https://pnqgold.com.my/">
-                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline h-6 mr-3 sm:h-9" alt="PNQ Gold Logo">
-                    <span class="invisible lg:visible">PNQ Gold Sdn Bhd</span> </a>
+                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline h-8 mr-3 sm:h-16" alt="PNQ Gold Logo">
+                    <span class="invisible lg:visible">PNQ GOLD SDN BHD</span> </a>
             </div>
             <div class="block pr-4 lg:hidden">
                 <button id="nav-toggle" class="flex items-center p-1 text-pink-800 transition duration-300 ease-in-out transform focus:shadow-outline hover:scale-105 hover:text-gray-900 focus:outline-none">
@@ -46,9 +46,9 @@
                 <ul class="items-center justify-end flex-1 list-reset lg:flex">
                     <li class="mr-3">
                         @auth
-                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Dashboard</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400" href="{{ route('login') }}">DASHBOARD</a>
                         @else
-                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-gray-800" href="{{ route('login') }}">Log Masuk</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400" href="{{ route('login') }}">LOG MASUK</a>
                         @endauth
                     </li>
                 </ul>
@@ -95,7 +95,50 @@
         </span>
     </footer>
 
+    <script>
+        var scrollpos = window.scrollY;
+        var header = document.getElementById("header");
+        var navcontent = document.getElementById("nav-content");
+        var navaction = document.getElementById("navAction");
+        var brandname = document.getElementById("brandname");
+        var toToggle = document.querySelectorAll(".toggleColour");
 
+        document.addEventListener("scroll", function() {
+            /*Apply classes for slide in bar*/
+            scrollpos = window.scrollY;
+
+            if (scrollpos > 10) {
+                header.classList.add("bg-white");
+                navaction.classList.remove("bg-white");
+                navaction.classList.add("gradient");
+                navaction.classList.remove("text-gray-800");
+                navaction.classList.add("text-white");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-gray-800");
+                    toToggle[i].classList.remove("text-white");
+                }
+                header.classList.add("shadow");
+                navcontent.classList.remove("bg-gray-100");
+                navcontent.classList.add("bg-white");
+            } else {
+                header.classList.remove("bg-white");
+                navaction.classList.remove("gradient");
+                navaction.classList.add("bg-white");
+                navaction.classList.remove("text-white");
+                navaction.classList.add("text-gray-800");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-white");
+                    toToggle[i].classList.remove("text-gray-800");
+                }
+
+                header.classList.remove("shadow");
+                navcontent.classList.remove("bg-white");
+                navcontent.classList.add("bg-gray-100");
+            }
+        });
+    </script>
     <script>
         /*Toggle dropdown list*/
         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/

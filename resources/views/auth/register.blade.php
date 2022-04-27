@@ -17,9 +17,16 @@
 </head>
 
 <body class="hold-transition register-page">
+    <?php
+    alert('Registration is not allowed');
+    function alert($msg)
+    {
+        echo "<script type='text/javascript'>alert('$msg'); window.location.href='https://pnqgold.com.my/';</script>";
+    }
+    ?>
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+            <a href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
         </div>
 
         <div class="card">
