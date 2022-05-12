@@ -13,7 +13,12 @@ const tailwindcss = require("tailwindcss");
  |
  */
 
-mix.setPublicPath(path.normalize('../public_html/'));
+
+if (mix.inProduction()) {
+    mix.setPublicPath(path.normalize('../public_html/helpdesk/'));
+  } else {
+    mix.setPublicPath(path.normalize('../public_html/'));
+  }
 
 mix.js("resources/js/app.js", "js")
     .sass("resources/sass/app.scss", "css")

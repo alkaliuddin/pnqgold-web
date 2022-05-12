@@ -28,7 +28,7 @@ if (App::environment('production')) {
 }
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.helpdesk');
 })->name('welcome');
 
 Route::group(['prefix' => 'pengguna'], function () {

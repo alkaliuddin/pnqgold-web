@@ -13,9 +13,15 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('path.public', function() {
-            return realpath('../public_html');
-        });
+        if (env('APP_ENV') == 'production') {
+            $this->app->bind('path.public', function () {
+                return base_path() . '/../public_html/helpdesk/';
+            });
+        } else {
+            $this->app->bind('path.public', function() {
+                return realpath('../public_html');
+            });
+        }
     }
 
     /**
