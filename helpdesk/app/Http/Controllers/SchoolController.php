@@ -35,6 +35,10 @@ class SchoolController extends Controller {
         $request->validate([
             'school_code' => 'required',
             'school_name' => 'required',
+        ], 
+        [
+            'school_code.required' => 'Sila masukkan Kod Sekolah',
+            'school_name.required' => 'Sila masukkan Nama Sekolah',
         ]);
 
         $data = $request->all();

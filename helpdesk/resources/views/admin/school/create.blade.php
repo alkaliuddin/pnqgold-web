@@ -11,7 +11,7 @@
 
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Oops!</strong> Sila semak maklumat berikut.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -37,13 +37,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school_code">Kod Sekolah</label>
-                                            <input type="text" class="form-control" id="school_code" name="school_code" placeholder="Masuk Kod Sekolah">
+                                            <input type="text" class="form-control" id="school_code" name="school_code" placeholder="Masuk Kod Sekolah" value="{{ old('school_code') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school_name">Nama Sekolah</label>
-                                            <input type="text" class="form-control" id="school_name" name="school_name" placeholder="Masukkan Nama Sekolah">
+                                            <input type="text" class="form-control" id="school_name" name="school_name" placeholder="Masukkan Nama Sekolah" value="{{ old('school_name') }}">
                                         </div>
                                     </div>
                                 </div>
