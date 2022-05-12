@@ -54,6 +54,21 @@ class Complaint extends Model {
         'status' => 'string',
     ];
 
+    public static $message = [
+        'complaint_isd_code' => 'Sila masukkan Kod Aduan ISD',
+        'school_id' => 'Sila pilih Sekolah',
+        'asset_model' => 'Sila pilih Model Aset',
+        'tagging_no' => 'Sila masukkan No. Pendaftaran',
+        'serial_no' => 'Sila masukkan No. Siri',
+        'complainant_name' => 'Sila masukkan Nama Pengadu',
+        'complainant_email' => 'Sila masukkan Emel Pangadu',
+        'complainant_phone' => 'Sila masukkan No. Telefon Pengadu',
+        'complaint_details' => 'Sila masukkan Keterangan Aduan',
+        'attachment_path' => 'Sila muat naikkan lampiran yang berkenaan',
+        'status' => 'Sila pilih Status aduan',
+    ];
+
+
     public function school() {
         return $this->belongsTo(School::class, 'school_id');
     }

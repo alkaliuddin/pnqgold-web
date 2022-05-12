@@ -50,7 +50,7 @@ class ComplaintController extends Controller {
     public function store(Request $request) {
 
         $request->validate([
-            'complaint_isd_code' => 'required',
+            'complaint_isd_code' => 'bail|required',
             'school_id' => 'required',
             'asset_model' => 'required',
             'tagging_no' => 'required',
@@ -60,6 +60,18 @@ class ComplaintController extends Controller {
             'complainant_phone' => 'required',
             'complaint_details' => 'required',
             'status' => 'required',
+        ], 
+        [
+            'complaint_isd_code.required' => 'Sila masukkan Kod Aduan ISD',
+            'school_id.required' => 'Sila pilih Sekolah',
+            'asset_model.required' => 'Sila pilih Model Aset',
+            'tagging_no.required' => 'Sila masukkan No. Pendaftaran',
+            'serial_no.required' => 'Sila masukkan No. Siri',
+            'complainant_name.required' => 'Sila masukkan Nama Pengadu',
+            'complainant_email.required' => 'Sila masukkan Emel Pangadu',
+            'complainant_phone.required' => 'Sila masukkan No. Telefon Pengadu',
+            'complaint_details.required' => 'Sila masukkan Keterangan Aduan',
+            'status.required' => 'Sila pilih Status aduan',
         ]);
 
         $data = $request->all();
