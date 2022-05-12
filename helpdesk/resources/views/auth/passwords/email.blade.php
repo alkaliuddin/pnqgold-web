@@ -10,7 +10,9 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
 
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
@@ -28,21 +30,22 @@
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
 
                 @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
                 @endif
 
                 <form action="{{ route('password.email') }}" method="post">
                     @csrf
 
                     <div class="mb-3 input-group">
-                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email">
+                        <input type="email" name="email"
+                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
                         @if ($errors->has('email'))
-                            <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
+                        <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
 

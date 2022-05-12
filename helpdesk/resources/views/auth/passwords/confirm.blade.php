@@ -10,7 +10,9 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
 
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
@@ -30,12 +32,14 @@
                     @csrf
 
                     <div class="mb-3 input-group">
-                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" required autocomplete="current-password">
+                        <input type="password" name="password"
+                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                            placeholder="Password" required autocomplete="current-password">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
                         @if ($errors->has('password'))
-                            <span class="error invalid-feedback">{{ $errors->first('password') }}</span>
+                        <span class="error invalid-feedback">{{ $errors->first('password') }}</span>
                         @endif
                     </div>
 
