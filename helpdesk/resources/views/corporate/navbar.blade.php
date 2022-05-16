@@ -26,18 +26,18 @@
                         Kami</a>
                 </li>
                 @if (Route::has('login'))
-                @auth
-                <li>
-                    <a href="{{ route('dashboard') }}"
-                        class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Helpdesk
-                        Panel</a>
-                </li>
-                @else
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Helpdesk</a>
-                </li>
-                @endauth
+                    @auth
+                        <li>
+                            <a href="{{ route('dashboard') }}"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Helpdesk
+                                Panel</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="#"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Helpdesk</a>
+                        </li>
+                    @endauth
                 @endif
             </ul>
         </div>

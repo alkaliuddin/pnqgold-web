@@ -17,6 +17,7 @@
         .gradient {
             background: linear-gradient(90deg, #3F45AA 0%, #DBB630 100%);
         }
+
     </style>
 </head>
 
@@ -25,10 +26,8 @@
     <nav id="header" class="fixed top-0 z-30 w-full text-white">
         <div class="container flex flex-wrap items-center justify-between w-full py-2 mx-auto mt-0">
             <div class="flex items-center pl-4">
-                <a class="text-2xl font-bold text-white no-underline toggleColour hover:no-underline lg:text-4xl"
-                    href="#">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-9"
-                        alt="PNQ Gold Logo">
+                <a class="text-2xl font-bold text-white no-underline toggleColour hover:no-underline lg:text-4xl" href="#">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-9" alt="PNQ Gold Logo">
                     PNQ Gold Sdn Bhd
                 </a>
             </div>
@@ -89,8 +88,7 @@
         </div>
     </div>
     <div class="relative -mt-12 lg:-mt-24">
-        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <path
@@ -149,8 +147,7 @@
                             d="M81,599.39a14,14,0,0,1,7-11.5l3.14,6.22-.1-7.53a14.22,14.22,0,0,1,4.63-.56A14,14,0,1,1,81,599.39Z"
                             fill="#57b894" />
                         <path transform="translate(-11.5 -150.75)"
-                            d="M106,694.38a14,14,0,1,0-.68-11.3l8.77,7.13L104.46,688A14,14,0,0,0,106,694.38Z"
-                            fill="#57b894" />
+                            d="M106,694.38a14,14,0,1,0-.68-11.3l8.77,7.13L104.46,688A14,14,0,0,0,106,694.38Z" fill="#57b894" />
                         <path transform="translate(-11.5 -150.75)"
                             d="M113,667.13a14,14,0,0,0,4.45-27.53l.08,5.78-3.18-6.29h0a14,14,0,0,0-14.67,13.36,13.84,13.84,0,0,0,.6,4.79A14,14,0,0,0,113,667.13Z"
                             fill="#57b894" />
@@ -183,23 +180,21 @@
                         <circle cx="193" cy="127.75" r="6" fill="#ff6347" />
                         <circle cx="208" cy="127.75" r="6" fill="#ff6347" />
                         <circle cx="223" cy="127.75" r="6" fill="#ff6347" />
+                        <path transform="translate(-11.5 -150.75)" d="M387.5,490A66.5,66.5,0,1,1,321,423.5,66.47,66.47,0,0,1,387.5,490Z"
+                            fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
-                            d="M387.5,490A66.5,66.5,0,1,1,321,423.5,66.47,66.47,0,0,1,387.5,490Z" fill="none"
-                            stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
-                        <path transform="translate(-11.5 -150.75)"
-                            d="M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43"
-                            fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" />
+                            d="M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43" fill="none"
+                            stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
                             d="M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z"
                             fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
-                            d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none"
-                            stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
-                        <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2"
+                            d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none" stroke="#f2f2f2"
                             stroke-miterlimit="10" stroke-width="2" />
-                        <path transform="translate(-11.5 -150.75)" d="m333.5 480.5" fill="none" stroke="#f2f2f2"
-                            stroke-miterlimit="10" stroke-width="2" />
+                        <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2" stroke-miterlimit="10"
+                            stroke-width="2" />
+                        <path transform="translate(-11.5 -150.75)" d="m333.5 480.5" fill="none" stroke="#f2f2f2" stroke-miterlimit="10"
+                            stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
                             d="M563.51,413.13c-.35,0-1.51,0-1.83,0l-6.61.17a.19.19,0,0,1-.17-.09L545,398.42a1.61,1.61,0,0,0-1.37-.75h-2.41c-.57,0-.77.57-.56,1.1l5.09,14.52a.2.2,0,0,1-.18.28l-12.45.18a.81.81,0,0,1-.67-.31l-3.77-4.58a1.59,1.59,0,0,0-1.28-.62h-1.71a.4.4,0,0,0-.38.54l2,7a1.68,1.68,0,0,1,0,1.21l-2,7a.39.39,0,0,0,.38.53h1.7a1.62,1.62,0,0,0,1.28-.62l3.84-4.64a.82.82,0,0,1,.67-.32l12.38.27a.21.21,0,0,1,.18.28L540.65,434c-.21.53,0,1.1.56,1.1h2.41a1.61,1.61,0,0,0,1.37-.76l9.91-14.81a.2.2,0,0,1,.17-.09l6.61.17c.33,0,1.48,0,1.83,0,4.5,0,7.35-1.45,7.35-3.25S568,413.13,563.51,413.13Z"
                             fill="#3f3d56" />
@@ -213,14 +208,12 @@
                         <rect x="604" y="392.07" width="347" height="11" rx="1.24" fill="#ff6347" opacity=".3" />
                         <rect x="878" y="279.75" width="73" height="25" rx="1.24" fill="#ff6347" />
                         <rect x="878" y="411.75" width="73" height="25" rx="1.24" fill="#ff6347" />
+                        <path transform="translate(-11.5 -150.75)" d="m978.18 606.93l-1.73 2s-21.05 2-20.2 5.39 25.35-4.55 25.35-4.55z"
+                            fill="#ffc1c7" />
                         <path transform="translate(-11.5 -150.75)"
-                            d="m978.18 606.93l-1.73 2s-21.05 2-20.2 5.39 25.35-4.55 25.35-4.55z" fill="#ffc1c7" />
+                            d="m1016.3 605.22s-22.5 8-34.74 4.56l5.69 11.39s29.05-0.86 34.18-6-5.13-9.95-5.13-9.95z" fill="#ff6584" />
                         <path transform="translate(-11.5 -150.75)"
-                            d="m1016.3 605.22s-22.5 8-34.74 4.56l5.69 11.39s29.05-0.86 34.18-6-5.13-9.95-5.13-9.95z"
-                            fill="#ff6584" />
-                        <path transform="translate(-11.5 -150.75)"
-                            d="m1016.3 605.22s-22.5 8-34.74 4.56l5.69 11.39s29.05-0.86 34.18-6-5.13-9.95-5.13-9.95z"
-                            opacity=".1" />
+                            d="m1016.3 605.22s-22.5 8-34.74 4.56l5.69 11.39s29.05-0.86 34.18-6-5.13-9.95-5.13-9.95z" opacity=".1" />
                         <circle cx="989.6" cy="378.29" r="15.09" fill="#ffc1c7" />
                         <path transform="translate(-11.5 -150.75)"
                             d="m1014 543.21a11.85 11.85 0 0 0 2 2.71 24.62 24.62 0 0 0 7.28 5.44 246.74 246.74 0 0 1 -25.93 3.86c0.92-3.24-0.29-6.7-1.91-9.64s-3.7-5.69-4.72-8.9l10.2 0.28c1.85 0 3.71 0.1 5.56 0 1.39-0.07 3.69-0.9 5-0.59 2.64 0.63 1.3 4.42 2.52 6.84z"
@@ -263,8 +256,7 @@
             </div>
             <div class="flex flex-col-reverse flex-wrap sm:flex-row">
                 <div class="w-full p-6 mt-6 sm:w-1/2">
-                    <svg class="w-5/6 mx-auto sm:h-64" viewBox="0 0 1176.60617 873.97852"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-5/6 mx-auto sm:h-64" viewBox="0 0 1176.60617 873.97852" xmlns="http://www.w3.org/2000/svg">
                         <title>connected world</title>
                         <path transform="translate(-11.697 -13.011)"
                             d="m1095.7 225.46c-133.54-185.83-415.64-261.21-693.08-180.02-146.67 42.921-288.09 128.92-358.18 295.44-125.28 297.67 137.76 392.74 309.77 423.04 83.172 14.651 161.51 39.263 233.09 72.771 128.78 60.284 356.74 113.7 528.63-137.41 124.59-182.01 68.722-350.04-20.23-473.82z"
@@ -466,8 +458,7 @@
                     </path>
                 </g>
                 <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
-                    <g
-                        transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+                    <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
                         <path
                             d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
                             opacity="0.100000001"></path>
@@ -503,8 +494,7 @@
             <div class="flex flex-col w-full py-6 md:flex-row">
                 <div class="flex-1 mb-6 text-black">
                     <a class="text-2xl font-bold text-yellow-600 no-underline hover:no-underline lg:text-4xl" href="#">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-8"
-                            alt="PNQ Gold Logo">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="inline h-6 mr-3 sm:h-8" alt="PNQ Gold Logo">
                         PNQ Gold
                     </a>
                 </div>
@@ -515,8 +505,7 @@
                             <a href="#" class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Help</a>
                         </li>
                         <li class="inline-block mt-2 mr-2 md:mr-0 md:block">
-                            <a href="#"
-                                class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Support</a>
+                            <a href="#" class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Support</a>
                         </li>
                     </ul>
                 </div>
@@ -524,16 +513,13 @@
                     <p class="text-gray-500 uppercase md:mb-6">Sosial</p>
                     <ul class="mb-6 list-reset">
                         <li class="inline-block mt-2 mr-2 md:mr-0 md:block">
-                            <a href="#"
-                                class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Facebook</a>
+                            <a href="#" class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Facebook</a>
                         </li>
                         <li class="inline-block mt-2 mr-2 md:mr-0 md:block">
-                            <a href="#"
-                                class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Linkedin</a>
+                            <a href="#" class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Linkedin</a>
                         </li>
                         <li class="inline-block mt-2 mr-2 md:mr-0 md:block">
-                            <a href="#"
-                                class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Twitter</a>
+                            <a href="#" class="text-gray-800 no-underline hover:text-pink-500 hover:underline">Twitter</a>
                         </li>
                     </ul>
                 </div>

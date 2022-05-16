@@ -22,8 +22,7 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/') }}">
-                <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline mr-3"
-                    alt="PNQ Gold Logo">
+                <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline mr-3" alt="PNQ Gold Logo">
                 <br>
                 <b>{{ config('app.name') }}</b>
             </a>
@@ -44,7 +43,7 @@
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
                         @error('email')
-                        <span class="error invalid-feedback">{{ $message }}</span>
+                            <span class="error invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -57,7 +56,7 @@
                             </div>
                         </div>
                         @error('password')
-                        <span class="error invalid-feedback">{{ $message }}</span>
+                            <span class="error invalid-feedback">{{ $message }}</span>
                         @enderror
 
                     </div>

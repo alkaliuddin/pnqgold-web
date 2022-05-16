@@ -18,6 +18,7 @@
         .gradient {
             background: linear-gradient(45deg, #DBB630 0%, #3F45AA 90%);
         }
+
     </style>
 
     @routes
@@ -29,10 +30,9 @@
     <nav id="header" class="fixed top-0 z-30 w-full">
         <div class="container flex flex-wrap items-center justify-between w-4/5 py-2 mx-auto mt-0">
             <div class="flex items-center pl-4">
-                <a class="font-bold no-underline text-md toggleColour hover:no-underline lg:text-4xl"
-                    href="https://pnqgold.com.my/">
-                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png"
-                        class="inline h-8 mr-3 sm:h-16" alt="PNQ Gold Logo">
+                <a class="font-bold no-underline text-md toggleColour hover:no-underline lg:text-4xl" href="https://pnqgold.com.my/">
+                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline h-8 mr-3 sm:h-16"
+                        alt="PNQ Gold Logo">
                     <span class="invisible lg:visible">PNQ GOLD SDN BHD</span> </a>
             </div>
             <div class="block pr-4 lg:hidden">
@@ -49,11 +49,11 @@
                 <ul class="items-center justify-end flex-1 list-reset lg:flex">
                     <li class="mr-3">
                         @auth
-                        <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
-                            href="{{ route('login') }}">DASHBOARD</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
+                                href="{{ route('login') }}">DASHBOARD</a>
                         @else
-                        <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
-                            href="{{ route('login') }}">LOG MASUK</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
+                                href="{{ route('login') }}">LOG MASUK</a>
                         @endauth
                     </li>
                 </ul>
@@ -66,8 +66,7 @@
 
     </div>
     <div class="relative -mt-12 lg:-mt-24">
-        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <path

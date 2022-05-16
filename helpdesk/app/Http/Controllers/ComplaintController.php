@@ -49,36 +49,39 @@ class ComplaintController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'complaint_isd_code' => 'bail|required',
-            'school_id' => 'required',
-            'asset_model' => 'required',
-            'tagging_no' => 'required',
-            'serial_no' => 'required',
-            'complainant_name' => 'required',
-            'complainant_email' => 'required',
-            'complainant_phone' => 'required',
-            'complaint_details' => 'required',
-            'status' => 'required',
-        ], 
-        [
-            'complaint_isd_code.required' => 'Sila masukkan Kod Aduan ISD',
-            'school_id.required' => 'Sila pilih Sekolah',
-            'asset_model.required' => 'Sila pilih Model Aset',
-            'tagging_no.required' => 'Sila masukkan No. Pendaftaran',
-            'serial_no.required' => 'Sila masukkan No. Siri',
-            'complainant_name.required' => 'Sila masukkan Nama Pengadu',
-            'complainant_email.required' => 'Sila masukkan Emel Pangadu',
-            'complainant_phone.required' => 'Sila masukkan No. Telefon Pengadu',
-            'complaint_details.required' => 'Sila masukkan Keterangan Aduan',
-            'status.required' => 'Sila pilih Status aduan',
-        ]);
+        $request->validate(
+            [
+                'complaint_isd_code' => 'bail|required',
+                'school_id' => 'required',
+                'asset_model' => 'required',
+                'tagging_no' => 'required',
+                'serial_no' => 'required',
+                'complainant_name' => 'required',
+                'complainant_email' => 'required',
+                'complainant_phone' => 'required',
+                'complaint_details' => 'required',
+                'status' => 'required',
+            ],
+            [
+                'complaint_isd_code.required' => 'Sila masukkan Kod Aduan ISD',
+                'school_id.required' => 'Sila pilih Sekolah',
+                'asset_model.required' => 'Sila pilih Model Aset',
+                'tagging_no.required' => 'Sila masukkan No. Pendaftaran',
+                'serial_no.required' => 'Sila masukkan No. Siri',
+                'complainant_name.required' => 'Sila masukkan Nama Pengadu',
+                'complainant_email.required' => 'Sila masukkan Emel Pangadu',
+                'complainant_phone.required' => 'Sila masukkan No. Telefon Pengadu',
+                'complaint_details.required' => 'Sila masukkan Keterangan Aduan',
+                'status.required' => 'Sila pilih Status aduan',
+            ]
+        );
 
         $data = $request->all();
-        $ISDExists = Complaint::where('complaint_isd_code',);
+        // $ISDExists = Complaint::where('complaint_isd_code',);
         Complaint::create($data);
 
-        return redirect()->route('complaints.index')->with('success', 'Aduan telah disimpan');
+        return redirect()->route('complaints.index')
+            ->with('success', 'Aduan berjaya disimpan');
     }
 
     public function edit(Complaint $complaint) {
@@ -137,7 +140,7 @@ class ComplaintController extends Controller {
                 ->addColumn('action', function ($row) {
                     return $this->getActionColumn($row);
                 })
-                ->rawColumns(['download','action'])
+                ->rawColumns(['download', 'action'])
                 ->make(true);
         }
     }

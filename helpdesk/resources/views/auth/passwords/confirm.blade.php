@@ -32,14 +32,13 @@
                     @csrf
 
                     <div class="mb-3 input-group">
-                        <input type="password" name="password"
-                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                             placeholder="Password" required autocomplete="current-password">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
                         @if ($errors->has('password'))
-                        <span class="error invalid-feedback">{{ $errors->first('password') }}</span>
+                            <span class="error invalid-feedback">{{ $errors->first('password') }}</span>
                         @endif
                     </div>
 

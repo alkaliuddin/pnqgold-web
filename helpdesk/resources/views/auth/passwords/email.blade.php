@@ -30,22 +30,22 @@
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
 
                 @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
                 @endif
 
                 <form action="{{ route('password.email') }}" method="post">
                     @csrf
 
                     <div class="mb-3 input-group">
-                        <input type="email" name="email"
-                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email">
+                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                            placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
                         @if ($errors->has('email'))
-                        <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
+                            <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
 
