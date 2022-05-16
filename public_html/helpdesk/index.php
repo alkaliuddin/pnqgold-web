@@ -16,16 +16,9 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists($maintenance = __DIR__.'/../helpdesk/storage/framework/maintenance.php')) {
-    require $maintenance;
-}
-
-/* 
-// Use on deploy
 if (file_exists($maintenance = __DIR__.'/../../helpdesk/storage/framework/maintenance.php')) {
     require $maintenance;
 }
- */
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +31,7 @@ if (file_exists($maintenance = __DIR__.'/../../helpdesk/storage/framework/mainte
 |
 */
 
-require __DIR__.'/../helpdesk/vendor/autoload.php';
-// require __DIR__.'/../../helpdesk/vendor/autoload.php'; // Use on deploy
+require __DIR__.'/../../helpdesk/vendor/autoload.php';
 
 
 /*
@@ -53,8 +45,7 @@ require __DIR__.'/../helpdesk/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../helpdesk/bootstrap/app.php';
-// $app = require_once __DIR__.'/../../helpdesk/bootstrap/app.php'; // Use on deployment
+$app = require_once __DIR__.'/../../helpdesk/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
