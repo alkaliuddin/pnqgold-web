@@ -60,6 +60,7 @@ class ComplaintController extends Controller {
                 'complainant_email' => 'required',
                 'complainant_phone' => 'required',
                 'complaint_details' => 'required',
+                'attachment_path' => 'required',
                 'status' => 'required',
             ],
             [
@@ -72,11 +73,19 @@ class ComplaintController extends Controller {
                 'complainant_email.required' => 'Sila masukkan Emel Pangadu',
                 'complainant_phone.required' => 'Sila masukkan No. Telefon Pengadu',
                 'complaint_details.required' => 'Sila masukkan Keterangan Aduan',
+                'attachment_path.required' => 'Sila muat naikkan lampiran berkenaan',
                 'status.required' => 'Sila pilih Status aduan',
             ]
         );
 
+        // File upload handling
+        $file = $request->attachment_path;
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $request->attachment_path->move('assets', $filename);
+
+
         $data = $request->all();
+        $data['attachment_path'] = $filename;
         // $ISDExists = Complaint::where('complaint_isd_code',);
         Complaint::create($data);
 
@@ -90,20 +99,46 @@ class ComplaintController extends Controller {
     }
 
     public function update(Request $request, Complaint $complaint) {
-        $request->validate([
-            'complaint_isd_code' => 'required',
-            'school_id' => 'required',
-            'asset_model' => 'required',
-            'tagging_no' => 'required',
-            'serial_no' => 'required',
-            'complainant_name' => 'required',
-            'complainant_email' => 'required',
-            'complainant_phone' => 'required',
-            'complaint_details' => 'required',
-            'status' => 'required',
-        ]);
+        $request->validate(
+            [
+                'complaint_isd_code' => 'bail|required',
+                'school_id' => 'required',
+                'asset_model' => 'required',
+                'tagging_no' => 'required',
+                'serial_no' => 'required',
+                'complainant_name' => 'required',
+                'complainant_email' => 'required',
+                'complainant_phone' => 'required',
+                'complaint_details' => 'required',
+                // 'attachment_path' => 'required',
+                'status' => 'required',
+            ],
+            [
+                'complaint_isd_code.required' => 'Sila masukkan Kod Aduan ISD',
+                'school_id.required' => 'Sila pilih Sekolah',
+                'asset_model.required' => 'Sila pilih Model Aset',
+                'tagging_no.required' => 'Sila masukkan No. Pendaftaran',
+                'serial_no.required' => 'Sila masukkan No. Siri',
+                'complainant_name.required' => 'Sila masukkan Nama Pengadu',
+                'complainant_email.required' => 'Sila masukkan Emel Pangadu',
+                'complainant_phone.required' => 'Sila masukkan No. Telefon Pengadu',
+                'complaint_details.required' => 'Sila masukkan Keterangan Aduan',
+                // 'attachment_path.required' => 'Sila muat naikkan lampiran berkenaan',
+                'status.required' => 'Sila pilih Status aduan',
+            ]
+        );
 
         $data = $request->all();
+
+        // File upload handling
+        if (!is_null($request->attachment_path)) {
+            
+            $file = $request->attachment_path;
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $request->attachment_path->move('assets', $filename);
+            $data['attachment_path'] = $filename;
+        }
+        
         $complaint->update($data);
         $complaint->touch();
 
@@ -161,20 +196,28 @@ class ComplaintController extends Controller {
                     onclick="return confirm(\'Anda pasti?\')">
                     <i class="fas fa-trash"></i>
                     Padam
+                </button>
             </form>';
 
         return $x;
     }
 
     public function getAttachmentDownloadColumn($data) {
-        $downloadURL = '#';
+        $downloadURL = route('admin.download_attachment', $data->attachment_path);
 
         $xy = '
-            <a href=' . $downloadURL . ' class="edit btn btn-info btn-sm">
-                <i class="fas fa-file-download"></i>
+            <form action=' . $downloadURL . ' method="POST">
+                ' . csrf_field() . '
+                <button type="submit" class="btn btn-info btn-sm">
+                    <i class="fas fa-file-download"></i>
                 Muat Turun
-            </a>';
+                </button>
+            </form>';
 
         return $xy;
+    }
+
+    public function downloadAttachment(Request $request, $attachment_path) {
+        return response()->file(public_path('assets/' . $attachment_path));
     }
 }

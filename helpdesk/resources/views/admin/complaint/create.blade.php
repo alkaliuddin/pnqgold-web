@@ -133,16 +133,16 @@
 
                                         <br>
 
-                                        <label for="fileUpload" class="block mb-2">
+                                        <label for="attachment_path" class="block mb-2">
                                             Muat Naik Lampiran
                                         </label>
                                         <div class="input-group">
-                                            <input class="form-control" type="file" name="fileUpload" id="fileUpload">
+                                            <input class="form-control" type="file" name="attachment_path" id="attachment_path">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ url()->previous() }}" class="btn btn-danger">
+                            <a href="{{ route('complaints.index') }}" class="btn btn-danger">
                                 <i class="mr-2 fas fa-ban"></i>
                                 Batal
                             </a>

@@ -57,6 +57,7 @@ Route::group(['prefix' => 'pengguna'], function () {
     Route::get('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 
     Route::get('/', [GuestController::class, 'index'])->name('guest.index');
+    Route::post('/download{attachment_path}', [GuestController::class, 'downloadAttachment'])->name('guest.download_attachment');
     Route::get('search', [GuestController::class, 'search'])->name('guest.searchISD');
 });
 

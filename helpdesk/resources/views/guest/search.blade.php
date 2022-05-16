@@ -15,8 +15,7 @@
 
             <div class="flex items-center content-center justify-center">
                 <a href="{{ route('guest.index') }}">
-                    <button
-                        class="px-4 py-2 font-bold text-white bg-blue-500 border-b-4 border-blue-700 rounded hover:border-blue-500 hover:bg-blue-400">
+                    <button class="px-4 py-2 font-bold text-white bg-blue-500 border-b-4 border-blue-700 rounded hover:border-blue-500 hover:bg-blue-400">
                         Kembali
                     </button>
                 </a>
@@ -28,101 +27,111 @@
                         <thead>
                             <tr>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Kod Aduan ISD</th>
+                                    Kod Aduan ISD
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Kod Sekolah</th>
+                                    Kod Sekolah
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Nama Sekolah</th>
+                                    Nama Sekolah
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Model Aset</th>
+                                    Model Aset
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    No. Pendaftaran</th>
+                                    No. Pendaftaran
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    No Siri</th>
+                                    No Siri
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Nama & Emel Pengadu</th>
+                                    Nama & Emel Pengadu
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    No. Telefon Pengadu</th>
+                                    No. Telefon Pengadu
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Status</th>
+                                    Status
+                                </th>
                                 <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
-                                    Keterangan Aduan</th>
+                                    Keterangan Aduan
+                                </th>
+                                <th class="hidden p-3 font-bold text-gray-600 uppercase bg-gray-200 border border-gray-300 lg:table-cell">
+                                    Lampiran
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($complaints as $complaint)
-                                <tr
-                                    class="flex flex-row flex-wrap mb-10 bg-white lg:flex-no-wrap lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100">
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                <tr class="flex flex-row flex-wrap mb-10 bg-white lg:flex-no-wrap lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100">
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Kod Aduan ISD
+                                        </span>
                                         {{ $complaint->complaint_isd_code }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span
-                                            class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Country</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Kod Sekolah
+                                        </span>
                                         {{ $complaint->school->school_code }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span
-                                            class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Country</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Nama Sekolah
+                                        </span>
                                         {{ $complaint->school->school_name }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Model Aset
+                                        </span>
                                         {{ $complaint->asset_model }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
                                         <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                            No. Tagging
+                                        </span>
                                         {{ $complaint->tagging_no }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            No. Siri
+                                        </span>
                                         {{ $complaint->serial_no }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Nama dan Emel Pengadu
+                                        </span>
                                         {{ $complaint->complainant_name }}
                                         <br>
                                         <i>{{ $complaint->complainant_email }}</i>
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b whitespace-nowrap lg:static lg:table-cell lg:w-auto">
-                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Kod
-                                            Aduan ISD</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b whitespace-nowrap lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            No. Telefon Pengadu
+                                        </span>
                                         {{ $complaint->complainant_phone }}
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span
-                                            class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Status</span>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Status</span>
                                         <?php $status = $complaint->status; ?>
                                         @switch($status)
                                             @case('Selesai')
-                                                <span class="px-3 py-1 text-xs font-bold bg-green-400 rounded">
+                                                <span class="px-3 py-1 text-xs font-bold text-white bg-green-400 rounded">
                                                     {{ $complaint->status }}
                                                 </span>
                                             @break
 
                                             @case('Dalam Proses')
-                                                <span class="px-3 py-1 text-xs font-bold bg-yellow-400 rounded">
+                                                <span class="px-3 py-1 text-xs font-bold text-white bg-yellow-400 rounded">
                                                     {{ $complaint->status }}
                                                 </span>
                                             @break
 
                                             @case('Baru')
-                                                <span class="px-3 py-1 text-xs font-bold bg-blue-400 rounded">
+                                                <span class="px-3 py-1 text-xs font-bold text-white bg-blue-400 rounded">
                                                     {{ $complaint->status }}
                                                 </span>
                                             @break
@@ -133,13 +142,26 @@
                                                 </span>
                                         @endswitch
                                     </td>
-                                    <td
-                                        class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
-                                        <span
-                                            class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">Keterangan
-                                            Aduan</span>
-                                        <br>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Keterangan Aduan
+                                        </span>
+                                        <br class="lg:hidden">
                                         {{ $complaint->complaint_details }}
+                                    </td>
+                                    <td class="relative block w-full p-3 text-center text-gray-800 border border-b whitespace-nowrap lg:static lg:table-cell lg:w-auto">
+                                        <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
+                                            Lampiran
+                                        </span>
+                                        <form action="{{ route('guest.download_attachment', $complaint->attachment_path); }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-info btn-sm">
+                                                <span class="px-3 py-1 font-bold text-white bg-blue-400 rounded text-md">
+                                                    <i class="fas fa-file-download"></i>
+                                                    Lihat
+                                                </span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -161,8 +183,7 @@
 
         </div>
     </section>
-    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
                 <g class="wave" fill="#f8fafc">
@@ -178,8 +199,7 @@
                         <path
                             d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
                             opacity="0.100000001"></path>
-                        <path
-                            d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+                        <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
                             opacity="0.200000003"></path>
                     </g>
                 </g>

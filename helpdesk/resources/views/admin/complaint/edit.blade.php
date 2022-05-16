@@ -4,7 +4,7 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="pull-left">
-                <h1 class="text-black-50">Insert new Complaint</h1>
+                <h1 class="text-black-50">Sunting Aduan</h1>
             </div>
         </div>
     </div>
@@ -26,10 +26,10 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            Complaint Details
+                            Butiran Aduan
                         </h3>
                     </div>
-                    <form action="{{ route('complaints.update', $complaint->id) }}" method="POST">
+                    <form action="{{ route('complaints.update', $complaint->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
@@ -113,7 +113,7 @@
                                             Keterangan Aduan
                                         </label>
                                         <br>
-                                        <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control" placeholder="Keterangan aduan..."></textarea>
+                                        <textarea id="complaint_details" name="complaint_details" rows="4" class="form-control" placeholder="Keterangan aduan...">{{ $complaint->complaint_details }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="status" class="block mb-2">
@@ -129,11 +129,13 @@
 
                                         <br>
 
-                                        <label for="fileUpload" class="block mb-2">
-                                            Muat Naik Lampiran
+                                        <label for="attachment_path" class="block mb-2">
+                                            Muat Naik Lampiran Baru
                                         </label>
-                                        <input class="form-control" type="file" name="fileUpload" id="fileUpload">
-                                        </input>
+                                        
+                                        <div class="input-group">
+                                            <input class="form-control" type="file" name="attachment_path" id="attachment_path">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

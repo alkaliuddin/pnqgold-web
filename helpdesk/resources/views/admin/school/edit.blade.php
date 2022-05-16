@@ -4,7 +4,7 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="pull-left">
-                <h1 class="text-black-50">Masuk Maklumat Sekolah</h1>
+                <h1 class="text-black-50">Sunting Maklumat Sekolah</h1>
             </div>
         </div>
     </div>

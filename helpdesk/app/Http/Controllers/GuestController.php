@@ -35,4 +35,8 @@ class GuestController extends Controller {
     public function show(Complaint $complaint) {
         //
     }
+
+    public function downloadAttachment(Request $request, $attachment_path) {
+        return response()->file(public_path('assets/' . $attachment_path));
+    }
 }

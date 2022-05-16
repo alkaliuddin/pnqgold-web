@@ -11,6 +11,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::controller(ComplaintController::class)->group(function () {
         Route::get('complaints/list', 'getComplaints')->name('complaints.list');
+        Route::post('/download{attachment_path}', 'downloadAttachment')->name('admin.download_attachment');
     });
 
     Route::controller(SchoolController::class)->group(function () {
