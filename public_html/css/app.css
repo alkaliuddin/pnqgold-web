@@ -1336,13 +1336,13 @@ input#checkboxLabelFive:checked ~ .box{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-.rounded-b{
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
 .rounded-t-none{
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+.rounded-b{
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 .rounded-l-lg{
   border-top-left-radius: 0.5rem;
@@ -1488,13 +1488,13 @@ input#checkboxLabelFive:checked ~ .box{
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .py-0{
   padding-top: 0px;
