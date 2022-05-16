@@ -10,11 +10,11 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
-    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z-150x147.png" sizes="32x32">
-    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z.png" sizes="192x192">
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="192x192">
 
     <style>
         .gradient {
@@ -33,8 +33,7 @@
         <div class="container flex flex-wrap items-center justify-between w-4/5 py-2 mx-auto mt-0">
             <div class="flex items-center pl-4">
                 <a class="font-bold no-underline text-md toggleColour hover:no-underline lg:text-4xl" href="https://pnqgold.com.my/">
-                    <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline h-8 mr-3 sm:h-16"
-                        alt="PNQ Gold Logo">
+                    <img src="{{ asset('images/pnqgoldsdnbhd.png') }}" class="inline h-8 mr-3 sm:h-16">
                     <span class="invisible lg:visible">PNQ GOLD SDN BHD</span> </a>
             </div>
             <div class="block pr-4 lg:hidden">
@@ -46,16 +45,13 @@
                     </svg>
                 </button>
             </div>
-            <div class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0"
-                id="nav-content">
+            <div class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0" id="nav-content">
                 <ul class="items-center justify-end flex-1 list-reset lg:flex">
                     <li class="mr-3">
                         @auth
-                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
-                                href="{{ route('login') }}">DASHBOARD</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400" href="{{ route('login') }}">DASHBOARD</a>
                         @else
-                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400"
-                                href="{{ route('login') }}">LOG MASUK</a>
+                            <a class="inline-block px-4 py-2 font-bold text-black no-underline hover:text-underline hover:text-yellow-400" href="{{ route('login') }}">LOG MASUK</a>
                         @endauth
                     </li>
                 </ul>
@@ -77,9 +73,8 @@
                     <path
                         d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
                         opacity="0.100000001"></path>
-                    <path
-                        d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
-                        id="Path-4" opacity="0.200000003"></path>
+                    <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4"
+                        opacity="0.200000003"></path>
                 </g>
                 <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <path

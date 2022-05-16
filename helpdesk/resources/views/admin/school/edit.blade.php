@@ -38,15 +38,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school_code">Kod Sekolah</label>
-                                            <input type="text" class="form-control" id="school_code" name="school_code"
-                                                value="{{ $school->school_code }}">
+                                            <input type="text" class="form-control" id="school_code" name="school_code" value="{{ $school->school_code }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school_name">Nama Sekolah</label>
-                                            <input type="text" class="form-control" id="school_name" name="school_name"
-                                                value="{{ $school->school_name }}">
+                                            <input type="text" class="form-control" id="school_name" name="school_name" value="{{ $school->school_name }}">
                                         </div>
                                     </div>
                                 </div>

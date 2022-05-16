@@ -38,8 +38,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="complaint_isd_code">Kod Aduan ISD</label>
-                                            <input type="text" class="form-control" id="complaint_isd_code" name="complaint_isd_code"
-                                                value="{{ $complaint->complaint_isd_code }}">
+                                            <input type="text" class="form-control" id="complaint_isd_code" name="complaint_isd_code" value="{{ $complaint->complaint_isd_code }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="school_id">Nama Sekolah dan Kod</label>
@@ -74,13 +73,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="tagging_no">No. Pendaftaran </label>
-                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no"
-                                                value="{{ $complaint->tagging_no }}">
+                                            <input type="text" class="form-control" id="tagging_no" name="tagging_no" value="{{ $complaint->tagging_no }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="serial_no">No. Siri</label>
-                                            <input type="text" class="form-control" id="serial_no" name="serial_no"
-                                                value="{{ $complaint->serial_no }}">
+                                            <input type="text" class="form-control" id="serial_no" name="serial_no" value="{{ $complaint->serial_no }}">
                                         </div>
                                     </div>
                                 </div>
@@ -89,20 +86,17 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="complainant_name">Nama Pengadu</label>
-                                            <input type="text" class="form-control" id="complainant_name" name="complainant_name"
-                                                value="{{ $complaint->complainant_name }}">
+                                            <input type="text" class="form-control" id="complainant_name" name="complainant_name" value="{{ $complaint->complainant_name }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="complainant_email">Emel Pangadu</label>
-                                            <input type="email" class="form-control" id="complainant_email" name="complainant_email"
-                                                value="{{ $complaint->complainant_email }}">
+                                            <input type="email" class="form-control" id="complainant_email" name="complainant_email" value="{{ $complaint->complainant_email }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="complainant_phone">No. Telefon Pengadu</label>
-                                            <input type="text" class="form-control" id="complainant_phone" name="complainant_phone"
-                                                value="{{ $complaint->complainant_phone }}">
+                                            <input type="text" class="form-control" id="complainant_phone" name="complainant_phone" value="{{ $complaint->complainant_phone }}">
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +126,7 @@
                                         <label for="attachment_path" class="block mb-2">
                                             Muat Naik Lampiran Baru
                                         </label>
-                                        
+
                                         <div class="input-group">
                                             <input class="form-control" type="file" name="attachment_path" id="attachment_path">
                                         </div>

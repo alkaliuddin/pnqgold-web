@@ -11,9 +11,10 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" />
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="192x192">
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
 </head>
@@ -22,7 +23,7 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/') }}">
-                <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="inline mr-3" alt="PNQ Gold Logo">
+                <img src="{{ asset('images/pnqgoldsdnbhd.png') }}" class="inline mr-3" alt="PNQ Gold Logo">
                 <br>
                 <b>{{ config('app.name') }}</b>
             </a>
@@ -37,8 +38,7 @@
                     @csrf
 
                     <div class="mb-3 input-group">
-                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Email"
-                            class="form-control @error('email') is-invalid @enderror">
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
@@ -48,8 +48,7 @@
                     </div>
 
                     <div class="mb-3 input-group">
-                        <input type="password" name="password" placeholder="Password"
-                            class="form-control @error('password') is-invalid @enderror">
+                        <input type="password" name="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

@@ -16,8 +16,8 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
-    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z-150x147.png" sizes="32x32">
-    <link rel="icon" href="https://pnqgold.com.my/wp-content/uploads/2022/03/a0z.png" sizes="192x192">
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('images/pnqgold-150x147.png') }}" sizes="192x192">
 
     @routes
     <script src="{{ asset(mix('js/app.js')) }}"></script>
@@ -42,14 +42,12 @@
             <ul class="ml-auto navbar-nav">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        {{-- <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                            class="user-image img-circle elevation-2" alt="User Image"> --}}
                         <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-primary">
-                            <img src="https://pnqgold.com.my/wp-content/uploads/2022/03/Untitled.png" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{ asset('images/pnqgoldsdnbhd.png') }}" class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->name }}
                                 <small>Ahli sejak {{ Auth::user()->created_at->format('M. Y') }}</small>

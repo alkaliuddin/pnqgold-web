@@ -153,7 +153,7 @@
                                         <span class="absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase bg-blue-200 lg:hidden">
                                             Lampiran
                                         </span>
-                                        <form action="{{ route('guest.download_attachment', $complaint->attachment_path); }}" method="POST">
+                                        <form action="{{ route('guest.download_attachment', $complaint->attachment_path) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-info btn-sm">
                                                 <span class="px-3 py-1 font-bold text-white bg-blue-400 rounded text-md">

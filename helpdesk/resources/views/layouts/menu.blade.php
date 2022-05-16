@@ -1,7 +1,6 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}"
-        onclick="return confirm('Kembali ke Laman Utama?')">
+    <a href="{{ route('welcome') }}" class="nav-link {{ Request::is('welcome') ? 'active' : '' }}" onclick="return confirm('Kembali ke Laman Utama?')">
         <i class="nav-icon fas fa-globe"></i>
         <p>Laman Utama</p>
     </a>
