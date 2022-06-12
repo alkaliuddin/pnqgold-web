@@ -8,7 +8,7 @@
 </p>
 
 ## PNQ Gold Complaint System Project
-[Website URL](https://pnqgold.com.my/). [System URL](https://pnqgold.com.my/helpdesk).
+[Website URL](https://pnqgold.com.my/). [System URL](https://pnqgold.com.my/helpdesk). The file structure is modified to fit the company's shared hosting provider.
 
 ## About Laravel
 
